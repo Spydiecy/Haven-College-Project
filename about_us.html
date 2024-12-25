@@ -13,14 +13,60 @@
 <body>
     <nav class="navbar">
         <a href="/" class="logo">HAVEN</a>
-        <ul class="nav-links">
-            <li><a href="#" class="nav-item">Destinations<span class="line"></span></a></li>
-            <li><a href="#" class="nav-item">Wellness<span class="line"></span></a></li>
-            <li><a href="#" class="nav-item">Innovation<span class="line"></span></a></li>
-            <li><a href="#" class="nav-item">Nature<span class="line"></span></a></li>
-            <li><a href="#" class="nav-item">Community<span class="line"></span></a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="/destinations" class="nav-item">Destinations</a></li>
+                <li><a href="/wellness" class="nav-item">Wellness</a></li>
+                <li><a href="/innovation" class="nav-item">Innovation</a></li>
+                <li><a href="/nature" class="nav-item">Nature</a></li>
+                <li><a href="/community" class="nav-item">Community</a></li>
+                <li><a href="/about" class="nav-item">The Story</a></li>
+                <li><a href="/login" class="nav-item join-us">Join Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
+
+    <!-- Overlay Menu -->
+    <div class="overlay-menu">
+        <div class="overlay-image">
+            <img src="overlay.png" alt="Wellness Experience">
+        </div>
+        <div class="overlay-content">
+            <div class="close-menu"></div>
+            <div class="menu-header">Discover Pages</div>
+            <div class="menu-content">
+                <div class="menu-column">
+                    <a href="/" class="menu-link">Home</a>
+                    <a href="/destinations" class="menu-link">Destinations</a>
+                    <a href="/wellness" class="menu-link">Wellness</a>
+                    <a href="/innovation" class="menu-link">Innovation</a>
+                    <a href="/nature" class="menu-link">Nature</a>
+                </div>
+                <div class="menu-column">
+                    <a href="/community" class="menu-link">Community</a>
+                    <a href="/about" class="menu-link">The Story</a>
+                    <a href="/developments" class="menu-link">New Developments</a>
+                    <a href="/press" class="menu-link">Press Room</a>
+                    <a href="/careers" class="menu-link">Careers</a>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="contact-header">Contact Us</div>
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">WhatsApp</a>
+                    <a href="#" class="social-link">TikTok</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="image-container">
         <div class="parallax-image" style="background-image: url('https://i.imgur.com/yrBr9sk.jpeg');"></div>
@@ -159,6 +205,66 @@
         </div>
     </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-grid">
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+                <a href="mailto:info@haven.co" class="hover-underline">info@haven.co</a>
+                <a href="tel:+62823407817" class="hover-underline">+62 823 4078 1817</a>
+            </div>
+        </div>
+
+        <!-- Primary Navigation -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Navigation</h3>
+            <div class="footer-links">
+                <a href="/" class="hover-underline">Home</a>
+                <a href="/destinations" class="hover-underline">Destinations</a>
+                <a href="/wellness" class="hover-underline">Wellness</a>
+                <a href="/innovation" class="hover-underline">Innovation</a>
+                <a href="/nature" class="hover-underline">Nature</a>
+            </div>
+        </div>
+
+        <!-- Secondary Navigation -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Discover</h3>
+            <div class="footer-links">
+                <a href="/community" class="hover-underline">Community</a>
+                <a href="/story" class="hover-underline">The Story</a>
+                <a href="/developments" class="hover-underline">New Developments</a>
+                <a href="/press" class="hover-underline">Press Room</a>
+                <a href="/careers" class="hover-underline">Careers</a>
+            </div>
+        </div>
+
+        <!-- Social Section -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Stay Connected</h3>
+            <div class="social-links">
+                <a href="#" class="hover-underline">Instagram</a>
+                <a href="#" class="hover-underline">Facebook</a>
+                <a href="#" class="hover-underline">WhatsApp</a>
+                <a href="#" class="hover-underline">TikTok</a>
+                <a href="#" class="hover-underline">YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="footer-line"></div>
+            <div class="bottom-content">
+                <span class="copyright">© 2024 HAVEN. All Rights Reserved</span>
+                <a href="/policies" class="hover-underline">Policies and Terms</a>
+                <span class="creator-credit">Made by Grp4 (G19)</span>
+            </div>
+        </div>
+    </footer>
 
 
 
@@ -301,6 +407,37 @@
             toggleActions: 'play none none reverse'
         }
     });
+
+    // spydiecy
+
+    const hamburger = document.querySelector('.hamburger');
+        const closeMenu = document.querySelector('.close-menu');
+        const overlayMenu = document.querySelector('.overlay-menu');
+        const navbar = document.querySelector('.navbar');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            overlayMenu.classList.add('active');
+        }
+
+        function closeMenuFunction() {
+            hamburger.classList.remove('active');
+            overlayMenu.classList.remove('active');
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunction);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0,0,0,0.8)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
     </script>
 </body>
 

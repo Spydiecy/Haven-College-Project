@@ -358,7 +358,6 @@ html {
 }
 
 /* Overlay Menu */
-/* Add these styles to your existing CSS */
 
 .overlay-menu {
     position: fixed;
@@ -632,7 +631,7 @@ html {
     visibility: hidden;
 }
 
-/* Enhanced Footer Styles */
+/* Footer Styles */
 .footer {
     background-color: #1c2621;
     color: #f4f1eb;
