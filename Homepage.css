@@ -15,51 +15,12 @@ html {
     transform-style: preserve-3d;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-}
-
 .logo {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
     letter-spacing: 2px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-item {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
-    letter-spacing: 1px;
-}
-
-.nav-item .line {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    transition: width 0.3s ease;
 }
 
 .video-section {
@@ -261,4 +222,303 @@ html {
     .marquee-item {
         font-size: 60px;
     }
+}
+
+/* spydiecy */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Underline hover effect */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.join-us {
+    border: 1px solid #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.join-us:hover {
+    background: #fff;
+    color: #000;
+}
+
+.join-us::after {
+    display: none;
+}
+
+.hamburger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+    margin-left: 2rem;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 50%; }
+.hamburger span:nth-child(3) { top: 100%; }
+
+/* Close Button */
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
+.close-menu::before {
+    transform: rotate(45deg);
+}
+
+.close-menu::after {
+    transform: rotate(-45deg);
+}
+
+/* Overlay Menu */
+/* Add these styles to your existing CSS */
+
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1500;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay-menu.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay-image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-content {
+    width: 50%;
+    height: 100%;
+    background: #f4f1eb;
+    padding: 4rem;
+    position: relative;
+}
+
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.close-menu::before,
+.close-menu::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    top: 50%;
+    left: 0;
+}
+
+.close-menu::before {
+    transform: rotate(45deg);
+}
+
+.close-menu::after {
+    transform: rotate(-45deg);
+}
+
+.menu-header {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.menu-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+}
+
+.menu-link:hover {
+    opacity: 0.7;
+}
+
+.contact-section {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    right: 4rem;
+}
+
+.contact-header {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.contact-info {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+    opacity: 1;
+}
+
+.policies-link {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Hamburger Animation */
+.hamburger.active span {
+    background: #000;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 50%;
 }
