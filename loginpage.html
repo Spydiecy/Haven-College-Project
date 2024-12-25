@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven - Login</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="loginpage.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">HAVEN</a>
+    </nav>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('login')">Login</div>
+            <div class="tab" onclick="switchTab('signup')">Sign Up</div>
+            <div class="tab-indicator"></div>
+        </div>
+
+        <div id="login" class="form-section active">
+            <h2>Welcome Back</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+        <div id="signup" class="form-section">
+            <h2>Create Account</h2>
+            <form id="signup-form" onsubmit="handleSignup(event)">
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Country" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div id="error-message"></div>
+
+        <!-- Back to Home Button -->
+        <button class="back-home-btn" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+    <script>
+        function switchTab(tab) {
+            const container = document.querySelector('.container');
+            const tabs = document.querySelectorAll('.tab');
+            const forms = document.querySelectorAll('.form-section');
+            const indicator = document.querySelector('.tab-indicator');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            forms.forEach(f => f.classList.remove('active'));
+
+            if (tab === 'signup') {
+                indicator.style.left = '50%';
+                tabs[1].classList.add('active');
+            } else {
+                indicator.style.left = '0';
+                tabs[0].classList.add('active');
+            }
+
+            gsap.to(container, {
+                scale: 0.95,
+                duration: 0.2,
+                onComplete: () => {
+                    document.getElementById(tab).classList.add('active');
+                    gsap.to(container, {
+                        scale: 1,
+                        duration: 0.2
+                    });
+                }
+            });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('show');
+
+            setTimeout(() => {
+                errorDiv.classList.remove('show');
+            }, 3000);
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const form = document.getElementById('login-form');
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+
+            // Add login logic here
+            console.log('Login:', { email, password });
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const form = document.getElementById('signup-form');
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelector('input[type="password"]').value;
+            const country = form.querySelector('input[type="text"]').value;
+
+            // Add signup logic here
+            console.log('Signup:', { email, password, country });
+        }
+
+        // Initial animations
+        gsap.from('.navbar', {
+            y: -100,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from('.container', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5,
+            ease: "power3.out"
+        });
+
+        gsap.from('.tabs', {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5,
+            ease: "power3.out"
+        });
+
+        const welcomeText = document.querySelector('.welcome-text');
+        welcomeText.classList.add('active');
+    </script>
+</body>
+
+</html>
