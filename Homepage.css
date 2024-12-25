@@ -631,3 +631,115 @@ html {
     opacity: 0;
     visibility: hidden;
 }
+
+/* Enhanced Footer Styles */
+.footer {
+    background-color: #1c2621;
+    color: #f4f1eb;
+    padding: 6rem 6rem 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Grid Layout */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+/* Section Styling */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #f4f1eb;
+    margin-bottom: 0.5rem;
+}
+
+/* Links Container */
+.footer-links, .contact-info, .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Hover Underline Effect */
+.hover-underline {
+    color: #f4f1eb;
+    text-decoration: none;
+    position: relative;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #f4f1eb;
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover {
+    opacity: 1;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* Footer Bottom */
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: #f4f1eb;
+    opacity: 0.2;
+    margin-bottom: 2rem;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .footer {
+        padding: 4rem 4rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bottom-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
