@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven - Luxury Wellness</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="Homepage.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">HAVEN</a>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item">Destinations<span class="line"></span></a></li>
+            <li><a href="#" class="nav-item">Wellness<span class="line"></span></a></li>
+            <li><a href="#" class="nav-item">Innovation<span class="line"></span></a></li>
+            <li><a href="#" class="nav-item">Nature<span class="line"></span></a></li>
+            <li><a href="#" class="nav-item">Community<span class="line"></span></a></li>
+        </ul>
+    </nav>
+
+    <div class="video-section">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+                <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+            </div>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="split-container">
+            <div class="image-container">
+                <div class="parallax-image" style="background-image: url('image1.jpg');"></div>
+            </div>
+            <div class="content-container">
+                <div class="content">
+                    <h2>Introduction</h2>
+                    <p>Welcome to a world of luxury and well-being with Haven, where you will discover exquisite luxury
+                        health and
+                        wellness resorts and residences nestled in the most breathtaking destinations on the globe.
+                        Experience a
+                        new dimension of wellness where luxury meets transformative living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="split-container">
+            <div class="content-container">
+                <div class="content">
+                    <h2>Wellness Sanctuary</h2>
+                    <p>At Haven, we use the Integrative Wellness approach, that considers psychological, physical, and
+                        nutritional
+                        aspects of your life to improve overall well-being and balance. Our sanctuary is where
+                        personalized wellness,
+                        innovation, and nature meet in perfect synergy.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="parallax-image" style="background-image: url('image2.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="split-container">
+            <div class="image-container">
+                <div class="parallax-image" style="background-image: url('image3.jpg');"></div>
+            </div>
+            <div class="content-container">
+                <div class="content">
+                    <h2>Integrative Approach</h2>
+                    <p>At Haven, we use the Integrative Wellness approach, that considers psychological, physical, and
+                        nutritional
+                        aspects of your life to improve overall well-being and balance. Our unique methodology ensures a
+                        harmonious blend of ancient wisdom and modern innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Enhanced Parallax Effect
+        document.querySelectorAll('.parallax-image').forEach((image) => {
+            const container = image.parentElement.parentElement;
+
+            gsap.fromTo(image,
+                {
+                    y: -100
+                },
+                {
+                    y: 100,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: image.parentElement,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1,
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+
+            // Scale effect
+            gsap.fromTo(image,
+                {
+                    scale: 1.1
+                },
+                {
+                    scale: 1.3,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: image.parentElement,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                }
+            );
+        });
+
+        // Content Animation
+        gsap.utils.toArray('.content').forEach((content) => {
+            gsap.from(content, {
+                y: 60,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: content,
+                    start: "top 80%",
+                    end: "top 20%",
+                    toggleActions: "play none none reverse",
+                    scrub: false
+                }
+            });
+        });
+
+        // Marquee Animation
+        const marqueeContent = document.querySelector('.marquee-content');
+
+        gsap.to(marqueeContent, {
+            x: "-50%",
+            ease: "none",
+            duration: 20,
+            repeat: -1
+        });
+
+        // Hero Text Animation
+        gsap.from('.hero-text', {
+            y: 100,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // Navbar Links Animation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            const line = item.querySelector('.line');
+
+            item.addEventListener('mouseenter', () => {
+                gsap.to(line, {
+                    width: '100%',
+                    duration: 0.3,
+                    ease: "power1.out"
+                });
+            });
+
+            item.addEventListener('mouseleave', () => {
+                gsap.to(line, {
+                    width: '0%',
+                    duration: 0.3,
+                    ease: "power1.out"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

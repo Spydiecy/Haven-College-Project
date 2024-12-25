@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.nav-item .line {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.video-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 80%;
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.content-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 2rem;
+    transform-style: preserve-3d;
+}
+
+.split-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 4rem;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+}
+
+.parallax-image {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateZ(0);
+}
+
+.content {
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.5px;
+}
+
+.marquee-container {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.marquee-item {
+    font-size: 125px;
+    font-weight: 100;
+    padding-right: 50px;
+    flex-shrink: 0;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1024px) {
+    .split-container {
+        gap: 2rem;
+    }
+
+    .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .marquee-item {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        height: 50vh;
+    }
+
+    .content-container {
+        width: 100%;
+    }
+
+    .content {
+        padding: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .marquee-item {
+        font-size: 60px;
+    }
+}
