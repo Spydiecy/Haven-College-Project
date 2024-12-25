@@ -11,6 +11,20 @@
 </head>
 
 <body>
+    <!-- Loader -->
+    <div class="loader-container">
+        <div class="loader-content">
+            <div class="loader-text">
+                <span class="letter">H</span>
+                <span class="letter">A</span>
+                <span class="letter">V</span>
+                <span class="letter">E</span>
+                <span class="letter">N</span>
+            </div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
     <nav class="navbar">
         <a href="/" class="logo">HAVEN</a>
         <div class="nav-container">
@@ -20,7 +34,7 @@
                 <li><a href="/innovation" class="nav-item">Innovation</a></li>
                 <li><a href="/nature" class="nav-item">Nature</a></li>
                 <li><a href="/community" class="nav-item">Community</a></li>
-                <li><a href="/story" class="nav-item">The Story</a></li>
+                <li><a href="/s" class="nav-item">The Story</a></li>
                 <li><a href="/login" class="nav-item join-us">Join Us</a></li>
             </ul>
             <div class="hamburger">
@@ -243,13 +257,11 @@
         const overlayMenu = document.querySelector('.overlay-menu');
         const navbar = document.querySelector('.navbar');
 
-        // Function to open menu
         function openMenu() {
             hamburger.classList.add('active');
             overlayMenu.classList.add('active');
         }
 
-        // Function to close menu
         function closeMenuFunction() {
             hamburger.classList.remove('active');
             overlayMenu.classList.remove('active');
@@ -258,7 +270,6 @@
         hamburger.addEventListener('click', openMenu);
         closeMenu.addEventListener('click', closeMenuFunction);
 
-        // Handle background change on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.style.background = 'rgba(0,0,0,0.8)';
@@ -268,6 +279,24 @@
                 navbar.style.backdropFilter = 'none';
             }
         });
+
+        // Loader Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.querySelector('.loader-container');
+            const letters = document.querySelectorAll('.letter');
+            
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.style.animation = 'colorChange 2s ease infinite';
+                }, index * 200);
+            });
+            
+            setTimeout(() => {
+                loader.classList.add('loaded');
+                document.body.style.overflow = 'auto';
+            }, 3000);
+        });
+        document.body.style.overflow = 'hidden';
     </script>
 </body>
 
