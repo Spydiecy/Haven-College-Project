@@ -88,8 +88,25 @@ const server = http.createServer(async (req, res) => {
             case '/dashboard':
                 await serveFile(path.join(__dirname, 'dashboard.html'), res);
                 break;
+            case '/destinations':
+                await serveFile(path.join(__dirname, 'destinations.html'), res);
+                break;
             default:
-                await serveFile(path.join(__dirname, 'comingsoon.html'), res);
+                    // Handle static files
+                    try {
+                        const filePath = path.join(__dirname, req.url);
+                        // Basic security check
+                        if (!filePath.startsWith(__dirname)) {
+                            res.writeHead(403, { 'Content-Type': 'text/plain' });
+                            res.end('Forbidden');
+                            return;
+                        }
+                        await serveFile(filePath, res);
+                    } catch (err) {
+                        console.error('Error serving static file:', err);
+                        res.writeHead(404, { 'Content-Type': 'text/plain' });
+                        res.end('File not found');
+                    }
         }
     }
     // Handle POST requests
