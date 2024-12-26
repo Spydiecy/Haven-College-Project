@@ -89,27 +89,13 @@ const server = http.createServer(async (req, res) => {
                 await serveFile(path.join(__dirname, 'dashboard.html'), res);
                 break;
             default:
-                // Handle static files
-                try {
-                    const filePath = path.join(__dirname, req.url);
-                    // Basic security check
-                    if (!filePath.startsWith(__dirname)) {
-                        res.writeHead(403, { 'Content-Type': 'text/plain' });
-                        res.end('Forbidden');
-                        return;
-                    }
-                    await serveFile(filePath, res);
-                } catch (err) {
-                    console.error('Error serving static file:', err);
-                    res.writeHead(404, { 'Content-Type': 'text/plain' });
-                    res.end('File not found');
-                }
+                await serveFile(path.join(__dirname, 'comingsoon.html'), res);
         }
     }
     // Handle POST requests
     else if (req.method === 'POST') {
         let body = '';
-        
+
         req.on('data', chunk => {
             body += chunk.toString();
             if (body.length > 1e6) {
@@ -124,7 +110,7 @@ const server = http.createServer(async (req, res) => {
 
                 if (req.url === '/signup') {
                     const users = await getUsers();
-                    
+
                     // Validate email and password
                     if (!formData.email || !formData.password) {
                         res.writeHead(400, { 'Content-Type': 'text/plain' });
@@ -159,8 +145,8 @@ const server = http.createServer(async (req, res) => {
                 }
                 else if (req.url === '/login') {
                     const users = await getUsers();
-                    const user = users.find(u => 
-                        u.email === formData.email && 
+                    const user = users.find(u =>
+                        u.email === formData.email &&
                         u.password === formData.password
                     );
 

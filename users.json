@@ -3,5 +3,10 @@
     "email": "a@gmail.com",
     "password": "123",
     "createdAt": "2024-12-25T19:45:19.579Z"
+  },
+  {
+    "email": "k@gmail.com",
+    "password": "12345",
+    "createdAt": "2024-12-26T03:39:47.375Z"
   }
 ]
