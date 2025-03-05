@@ -4,14 +4,33 @@ const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
+const errorMiddleware = require('./middlewares/errorMiddleware');
+
+// Import routes
+const indexRoutes = require('./routes/index');
+const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard');
+const destinationsRoutes = require('./routes/destinations');
+const aboutRoutes = require('./routes/about');
 
 // Initialize Express app
 const app = express();
 
 // Third-party middlewares
-app.use(helmet()); // Security headers
-app.use(cors()); // Enable CORS
-app.use(morgan('dev')); // HTTP request logging
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "cdnjs.cloudflare.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "fonts.googleapis.com"],
+      fontSrc: ["'self'", "fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "i.imgur.com"],
+      connectSrc: ["'self'"]
+    },
+  },
+}));
+app.use(cors());
+app.use(morgan('dev'));
 
 // Rate limiter middleware
 const limiter = rateLimit({
@@ -20,26 +39,29 @@ const limiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
 });
-app.use(limiter); // Apply rate limiting to all requests
+app.use(limiter);
 
 // Built-in middleware
-app.use(express.json()); // Parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Custom error middleware
-app.use(require('./middlewares/errorMiddleware'));
-
-// Routes
-app.use('/', require('./routes/index'));
-app.use('/auth', require('./routes/auth'));
-app.use('/dashboard', require('./routes/dashboard'));
-app.use('/destinations', require('./routes/destinations'));
-app.use('/about', require('./routes/about'));
+// Use routes
+app.use('/', indexRoutes);
+app.use('/auth', authRoutes);
+app.use('/dashboard', dashboardRoutes);
+app.use('/destinations', destinationsRoutes);
+app.use('/about', aboutRoutes);
+app.get('/login', (req, res) => {
+    res.redirect('/auth/login');
+  });
 
 // 404 handler - should be after all routes
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'views', 'not-found.html'));
 });
+
+// Error handling middleware
+app.use(errorMiddleware);
 
 module.exports = app;
