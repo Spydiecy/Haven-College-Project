@@ -149,13 +149,13 @@
                 <h1 class="auth-title" id="form-title">Welcome Back</h1>
             </div>
 
-            <form id="auth-form" onsubmit="handleSubmit(event)">
+            <form id="auth-form">
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email address" required>
+                    <input type="email" name="email" id="email" placeholder="Email address" required>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
 
                 <button type="submit" id="submit-button">Sign In</button>
@@ -163,7 +163,7 @@
 
                 <div class="toggle-form">
                     <span id="toggle-text">Don't have an account?</span>
-                    <a href="#" onclick="toggleForm(event)">Sign Up</a>
+                    <a href="#" id="toggle-link">Sign Up</a>
                 </div>
             </form>
         </div>
@@ -171,16 +171,20 @@
 
     <script>
         let isLoginMode = true;
-
-        function toggleForm(e) {
+        
+        // Get form elements
+        const form = document.getElementById('auth-form');
+        const formTitle = document.getElementById('form-title');
+        const submitButton = document.getElementById('submit-button');
+        const toggleText = document.getElementById('toggle-text');
+        const toggleLink = document.getElementById('toggle-link');
+        const errorMessage = document.getElementById('error-message');
+        
+        // Toggle between login and register
+        toggleLink.addEventListener('click', function(e) {
             e.preventDefault();
             isLoginMode = !isLoginMode;
             
-            const formTitle = document.getElementById('form-title');
-            const submitButton = document.getElementById('submit-button');
-            const toggleText = document.getElementById('toggle-text');
-            const toggleLink = toggleText.nextElementSibling;
-
             if (isLoginMode) {
                 formTitle.textContent = "Welcome Back";
                 submitButton.textContent = "Sign In";
@@ -192,37 +196,48 @@
                 toggleText.textContent = "Already have an account?";
                 toggleLink.textContent = "Sign In";
             }
-        }
-
-        async function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const errorDiv = document.getElementById('error-message');
+            
+            // Clear any error messages
+            errorMessage.style.display = 'none';
+        });
+        
+        // Handle form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
             
             try {
-                const response = await fetch(isLoginMode ? '/login' : '/signup', {
+                // Determine endpoint based on mode
+                const endpoint = isLoginMode ? '/auth/login' : '/auth/register';
+                
+                // Make the request
+                const response = await fetch(endpoint, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Content-Type': 'application/json'
                     },
-                    body: new URLSearchParams(formData).toString()
+                    body: JSON.stringify({ email, password })
                 });
-
-                if (response.redirected) {
-                    window.location.href = response.url;
+                
+                // Parse the response
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Redirect on success
+                    window.location.href = data.redirect;
                 } else {
-                    errorDiv.style.display = 'block';
-                    errorDiv.textContent = isLoginMode ? 
-                        'Invalid credentials. Please try again.' : 
-                        'Registration failed. Please try again.';
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = data.message;
                 }
             } catch (error) {
                 console.error('Error:', error);
-                errorDiv.style.display = 'block';
-                errorDiv.textContent = 'An error occurred. Please try again.';
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'An error occurred. Please try again.';
             }
-        }
+        });
     </script>
 </body>
 </html>
