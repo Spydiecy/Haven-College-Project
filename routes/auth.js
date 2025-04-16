@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const fs = require('fs').promises;
 const router = express.Router();
 
@@ -24,7 +23,10 @@ async function saveUsers(users) {
 
 // Login page route
 router.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/login.html'));
+  res.render('login', {
+    title: 'Login',
+    cssFile: 'login'
+  });
 });
 
 // Login handler
