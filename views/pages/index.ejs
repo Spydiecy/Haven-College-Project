@@ -1,0 +1,85 @@
+<%- include('../partials/header', { title: 'Luxury Wellness', cssFile: 'homepage' }) %>
+
+<%- include('../partials/navbar') %>
+
+<!-- Loader -->
+<div class="loader-container">
+    <div class="loader-content">
+        <div class="loader-text">
+            <span class="letter">H</span>
+            <span class="letter">A</span>
+            <span class="letter">V</span>
+            <span class="letter">E</span>
+            <span class="letter">N</span>
+        </div>
+        <div class="loading-bar"></div>
+    </div>
+</div>
+
+<div class="video-section">
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="videos/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+            <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+        </div>
+    </div>
+</div>
+
+<section class="content-section">
+    <div class="split-container">
+        <div class="image-container">
+            <div class="parallax-image" style="background-image: url('/images/image1.jpg');"></div>
+        </div>
+        <div class="content-container">
+            <div class="content">
+                <h2>Introduction</h2>
+                <p>Welcome to a world of luxury and well-being with Haven, where you will discover exquisite luxury
+                    health and wellness resorts and residences nestled in the most breathtaking destinations on the globe.
+                    Experience a new dimension of wellness where luxury meets transformative living.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="split-container">
+        <div class="content-container">
+            <div class="content">
+                <h2>Wellness Sanctuary</h2>
+                <p>At Haven, we use the Integrative Wellness approach, that considers psychological, physical, and
+                    nutritional aspects of your life to improve overall well-being and balance. Our sanctuary is where
+                    personalized wellness, innovation, and nature meet in perfect synergy.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="parallax-image" style="background-image: url('images/image2.jpg');"></div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="split-container">
+        <div class="image-container">
+            <div class="parallax-image" style="background-image: url('/images/image3.jpg');"></div>
+        </div>
+        <div class="content-container">
+            <div class="content">
+                <h2>Integrative Approach</h2>
+                <p>At Haven, we use the Integrative Wellness approach, that considers psychological, physical, and
+                    nutritional aspects of your life to improve overall well-being and balance. Our unique methodology ensures a
+                    harmonious blend of ancient wisdom and modern innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer-content') %>
+
+<%- include('../partials/footer', { jsFile: 'homepage' }) %>

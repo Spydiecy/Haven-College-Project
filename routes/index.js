@@ -1,10 +1,11 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 
 // Home page
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/index.html'));
+  res.render('index', {
+    title: 'Luxury Wellness'
+  });
 });
 
 module.exports = router;

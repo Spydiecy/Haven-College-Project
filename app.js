@@ -16,6 +16,10 @@ const aboutRoutes = require('./routes/about');
 // Initialize Express app
 const app = express();
 
+// Set view engine to EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views', 'pages'));
+
 // Third-party middlewares
 app.use(helmet({
   contentSecurityPolicy: {
@@ -54,11 +58,11 @@ app.use('/destinations', destinationsRoutes);
 app.use('/about', aboutRoutes);
 app.get('/login', (req, res) => {
     res.redirect('/auth/login');
-  });
+});
 
 // 404 handler - should be after all routes
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'views', 'not-found.html'));
+  res.status(404).render('not-found');
 });
 
 // Error handling middleware

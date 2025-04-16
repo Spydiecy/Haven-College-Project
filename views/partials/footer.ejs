@@ -1,0 +1,9 @@
+<!-- Common Scripts -->
+<script src="/js/common.js"></script>
+    
+<!-- Page Specific Scripts -->
+<% if (typeof jsFile !== 'undefined') { %>
+    <script src="/js/<%= jsFile %>.js"></script>
+<% } %>
+</body>
+</html>
