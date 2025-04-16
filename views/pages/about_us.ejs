@@ -1,0 +1,106 @@
+<%- include('../partials/header', { title: 'About Us', cssFile: 'about_us' }) %>
+
+<%- include('../partials/navbar') %>
+
+<div class="image-container">
+    <div class="parallax-image" style="background-image: url('/images/about.jpg');"></div>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+            <span class="marquee-item">Wellness • Innovation • Nature • Community </span>
+        </div>
+    </div>
+</div>
+
+<section class="content-section">
+    <div class="split-container">
+        <div class="content-container">
+            <div class="content">
+                <h2>Our Mission</h2>
+                <p>HAVEN is a premier hospitality group offering a collection of exceptional hotels and resorts across multiple locations worldwide. With a diverse portfolio of sub-brands, each catering to unique tastes and experiences, we redefine luxury and comfort for modern travelers. From tranquil beachfront escapes to vibrant urban retreats, Elementis combines world-class service, elegant design, and authentic local experiences to create unforgettable memories.</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="parallax-image" style="background-image: url('https://i.imgur.com/FxmFR4f.jpeg');"></div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="split-container">
+        <div class="image-container">
+            <div class="parallax-image" style="background-image: url('https://i.imgur.com/WUIeXnO.jpeg');"></div>
+        </div>
+        <div class="content-container">
+            <div class="content">
+                <h2>Our Commitment</h2>
+                <p>We believe every stay should be a journey of discovery and delight. Our sub-brands are tailored to meet the distinct needs of our guests, whether they seek adventure, relaxation, or cultural immersion. Rooted in sustainability and innovation, we are dedicated to providing thoughtful amenities, eco-friendly practices, and personalized experiences that reflect our commitment to excellence and our guests' well-being.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Members Section -->
+<section class="content-section team-section">
+    <h2 class="section-title">Our Team</h2>
+    <div class="team-container">
+        <% const team = [
+            { name: 'Tanishq Gupta', role: 'Wellness Director', image: '/images/team/tanishq.jpg' },
+            { name: 'Krishna Saxena', role: 'Innovation Lead', image: '/images/team/krishna.jpg' },
+            { name: 'Ansh Jolly', role: 'Nature Integration Specialist', image: '/images/team/jolly.jpg' },
+            { name: 'Arjit Pandey', role: 'Community Director', image: '/images/team/arjit.jpg' }
+        ]; %>
+        
+        <% team.forEach(member => { %>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="<%= member.image %>">
+                </div>
+                <h3><%= member.name %></h3>
+                <p><%= member.role %></p>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<!-- Destinations Section -->
+<section class="content-section destinations-section">
+    <h2 class="section-title">Our Destinations</h2>
+    <div class="destinations-container">
+        <% const destinations = [
+            { name: 'Aurelia', description: 'Urban wellness sanctuaries', image: 'https://i.imgur.com/jdiFTa9.jpeg' },
+            { name: 'Elysian', description: 'Mountain retreat experiences', image: 'https://i.imgur.com/jdiFTa9.jpeg' },
+            { name: 'Serenity', description: 'Coastal wellness escapes', image: 'https://i.imgur.com/jdiFTa9.jpeg' },
+            { name: 'Terra Nova', description: 'Desert oasis retreats', image: 'https://i.imgur.com/jdiFTa9.jpeg' },
+            { name: 'Celestia', description: 'Forest immersion resorts', image: 'https://i.imgur.com/jdiFTa9.jpeg' },
+            { name: 'Elementis', description: 'Wellness retreat', image: 'https://i.imgur.com/jdiFTa9.jpeg' }
+        ]; %>
+        
+        <% destinations.forEach(destination => { %>
+            <div class="destination-brand">
+                <div class="brand-image">
+                    <img src="<%= destination.image %>" alt="<%= destination.name %>">
+                </div>
+                <h3><%= destination.name %></h3>
+                <p><%= destination.description %></p>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="content-section cta-section">
+    <div class="cta-container">
+        <div class="cta-image">
+            <img src="https://i.imgur.com/rGUSGdp.jpeg" alt="Luxury wellness experience">
+        </div>
+        <div class="cta-content">
+            <h2>Begin Your Wellness Journey</h2>
+            <a href="/contact" class="cta-button">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer-content') %>
+
+<%- include('../partials/footer', { jsFile: 'about_us' }) %>
