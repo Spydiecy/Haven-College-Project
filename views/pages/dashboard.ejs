@@ -1,0 +1,75 @@
+<%- include('../partials/header', { title: 'Dashboard', cssFile: 'dashboard' }) %>
+
+<nav class="navbar">
+    <a href="/" class="logo">HAVEN</a>
+</nav>
+
+<div class="dashboard-container">
+    <section class="welcome-section">
+        <h1>Welcome to Haven Dashboard</h1>
+        <p>Explore our departments and services</p>
+    </section>
+
+    <section class="stats-container">
+        <% const stats = [
+            { number: '5', label: 'Luxury Locations' },
+            { number: '150+', label: 'Staff Members' },
+            { number: '1000+', label: 'Happy Guests' },
+            { number: '95%', label: 'Satisfaction Rate' }
+        ]; %>
+        
+        <% stats.forEach(stat => { %>
+            <div class="stat-card">
+                <div class="stat-number"><%= stat.number %></div>
+                <div class="stat-label"><%= stat.label %></div>
+            </div>
+        <% }); %>
+    </section>
+
+    <section class="department-grid">
+        <% const departments = [
+            {
+                name: 'Accommodations',
+                subdepartments: ['Luxury Suites', 'Executive Rooms', 'Presidential Villas', 'Ocean View Rooms']
+            },
+            {
+                name: 'Wellness Center',
+                subdepartments: ['Spa Services', 'Yoga Studio', 'Fitness Center', 'Meditation Spaces']
+            },
+            {
+                name: 'Dining',
+                subdepartments: ['Fine Dining Restaurant', 'Casual Bistro', 'Rooftop Bar', 'Private Dining']
+            },
+            {
+                name: 'Events & Meetings',
+                subdepartments: ['Conference Rooms', 'Wedding Venues', 'Banquet Halls', 'Business Center']
+            },
+            {
+                name: 'Recreation',
+                subdepartments: ['Swimming Pools', 'Beach Access', 'Tennis Courts', 'Golf Course']
+            },
+            {
+                name: 'Guest Services',
+                subdepartments: ['Concierge', 'Transportation', 'Housekeeping', '24/7 Room Service']
+            }
+        ]; %>
+        
+        <% departments.forEach(department => { %>
+            <div class="department-card">
+                <h2><%= department.name %></h2>
+                <ul class="subdepartment-list">
+                    <% department.subdepartments.forEach(subdepartment => { %>
+                        <li><%= subdepartment %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% }); %>
+    </section>
+</div>
+
+<div class="nav-buttons">
+    <a href="javascript:history.back()" class="nav-button">Back</a>
+    <a href="/" class="nav-button">Home</a>
+</div>
+
+<%- include('../partials/footer', { jsFile: 'dashboard' }) %>
