@@ -1,0 +1,353 @@
+/* Wellness page specific styles */
+
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://i.imgur.com/WUIeXnO.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Programs Section */
+.programs-section {
+    padding: 6rem 4rem;
+    background: #1c2621;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.programs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.program-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-image {
+    width: 40%;
+    overflow: hidden;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-image img {
+    transform: scale(1.1);
+}
+
+.program-content {
+    width: 60%;
+    padding: 2rem;
+}
+
+.program-content h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.program-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.program-features {
+    list-style: none;
+}
+
+.program-features li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.program-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Experts Section */
+.experts-section {
+    padding: 6rem 4rem;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.expert-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.expert-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.expert-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+}
+
+.expert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.expert-card h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.expert-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.expert-bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 6rem 4rem;
+    background: #1c2621;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    position: relative;
+}
+
+.testimonial-content {
+    position: relative;
+}
+
+.testimonial-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.testimonial-author h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 4rem;
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cta-image {
+    width: 50%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.cta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-content {
+    width: 50%;
+    padding: 3rem;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .program-card {
+        flex-direction: column;
+    }
+    
+    .program-image, 
+    .program-content {
+        width: 100%;
+    }
+    
+    .program-image {
+        height: 250px;
+    }
+    
+    .cta-container {
+        flex-direction: column;
+    }
+    
+    .cta-image, 
+    .cta-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .programs-section,
+    .experts-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 4rem 2rem;
+    }
+    
+    .section-title,
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .programs-container {
+        grid-template-columns: 1fr;
+    }
+}

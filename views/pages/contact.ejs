@@ -1,0 +1,108 @@
+<%- include('../partials/header', { title: 'Contact Us', cssFile: 'contact' }) %>
+
+<%- include('../partials/navbar') %>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p>Reach out to our team for inquiries, bookings, or to start your wellness journey</p>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="content-section">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>We're here to assist you with any questions about our properties, wellness programs, or booking inquiries.</p>
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-content">
+                    <h3>Call Us</h3>
+                    <p>+62 823 4078 1817</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-content">
+                    <h3>Email Us</h3>
+                    <p>info@haven.co</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Visit Us</h3>
+                    <p>123 Wellness Avenue,<br> Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="social-contact">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Location Map Section -->
+<section class="map-section">
+    <h2 class="section-title">Our Locations</h2>
+    <div class="locations-grid">
+        <div class="location-card">
+            <div class="location-image" style="background-image: url('https://i.imgur.com/yrBr9sk.jpeg')"></div>
+            <div class="location-info">
+                <h3>Bali Retreat</h3>
+                <p>Jalan Raya Ubud, Bali 80571, Indonesia</p>
+                <a href="#" class="location-link">Get Directions</a>
+            </div>
+        </div>
+        <div class="location-card">
+            <div class="location-image" style="background-image: url('https://i.imgur.com/WUIeXnO.jpeg')"></div>
+            <div class="location-info">
+                <h3>Swiss Alps Lodge</h3>
+                <p>Alps Road 45, 3920 Zermatt, Switzerland</p>
+                <a href="#" class="location-link">Get Directions</a>
+            </div>
+        </div>
+        <div class="location-card">
+            <div class="location-image" style="background-image: url('https://i.imgur.com/FxmFR4f.jpeg')"></div>
+            <div class="location-info">
+                <h3>Maldives Haven</h3>
+                <p>Kaafu Atoll, 08240, Maldives</p>
+                <a href="#" class="location-link">Get Directions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer-content') %>
+
+<%- include('../partials/footer', { jsFile: 'contact' }) %>

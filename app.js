@@ -12,6 +12,8 @@ const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
 const destinationsRoutes = require('./routes/destinations');
 const aboutRoutes = require('./routes/about');
+const contactRoutes = require('./routes/contact');
+const wellnessRoutes = require('./routes/wellness');
 
 // Initialize Express app
 const app = express();
@@ -56,6 +58,8 @@ app.use('/auth', authRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/destinations', destinationsRoutes);
 app.use('/about', aboutRoutes);
+app.use('/contact', contactRoutes);
+app.use('/wellness', wellnessRoutes);
 app.get('/login', (req, res) => {
     res.redirect('/auth/login');
 });

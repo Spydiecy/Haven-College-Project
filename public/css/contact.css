@@ -1,0 +1,276 @@
+/* Contact page specific styles */
+
+/* Hero Section */
+.hero-section {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://i.imgur.com/FxmFR4f.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Contact Form Section */
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.contact-info {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.info-content h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.social-contact {
+    margin-top: 3rem;
+}
+
+.social-contact h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+.contact-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.submit-button {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Locations Section */
+.map-section {
+    padding: 6rem 4rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.location-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.location-info {
+    padding: 1.5rem;
+}
+
+.location-info h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.location-info p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.location-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2px;
+}
+
+.location-link:hover {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-section {
+        padding: 4rem 2rem;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-info h2,
+    .contact-form h2,
+    .section-title {
+        font-size: 2rem;
+    }
+}
