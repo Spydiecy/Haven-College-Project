@@ -24,67 +24,99 @@
         </div>
         <h1>Welcome, <%= user.username || user.email.split('@')[0] %></h1>
         <p>Member since <%= new Date(user.createdAt).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %></p>
-    </div>
-
-    <section class="welcome-section">
+    </div>    <section class="welcome-section">
         <h2>Your Haven Experience</h2>
-        <p>Explore our exclusive services and offers</p>
+        <p>Manage your bookings and discover exclusive offers</p>
+    </section>
+
+    <section class="bookings-section">
+        <h2>Your Bookings</h2>
+        <% if (typeof bookings !== 'undefined' && bookings.length > 0) { %>
+            <div class="bookings-container">
+                <% bookings.forEach(booking => { %>
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h3><%= booking.destination %></h3>
+                            <span class="booking-status <%= booking.status %>"><%= booking.status %></span>
+                        </div>
+                        <div class="booking-dates">
+                            <div class="date-group">
+                                <span class="date-label">Check-in</span>
+                                <span class="date"><%= new Date(booking.checkIn).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) %></span>
+                            </div>
+                            <div class="date-arrow">→</div>
+                            <div class="date-group">
+                                <span class="date-label">Check-out</span>
+                                <span class="date"><%= new Date(booking.checkOut).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) %></span>
+                            </div>
+                        </div>
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Room</span>
+                                <span class="detail-value"><%= booking.roomType.charAt(0).toUpperCase() + booking.roomType.slice(1) %></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Guests</span>
+                                <span class="detail-value"><%= booking.guests.adults %> Adult<%= booking.guests.adults !== 1 ? 's' : '' %>, <%= booking.guests.children %> Child<%= booking.guests.children !== 1 ? 'ren' : '' %></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Payment</span>
+                                <span class="detail-value"><%= booking.paymentMethod.charAt(0).toUpperCase() + booking.paymentMethod.slice(1) %></span>
+                            </div>
+                            <div class="detail-item total">
+                                <span class="detail-label">Total</span>
+                                <span class="detail-value">$<%= booking.totalPrice %></span>
+                            </div>
+                        </div>
+                        <div class="booking-date">
+                            <span>Booked on <%= new Date(booking.bookingDate).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'}) %></span>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <div class="no-bookings">
+                <p>You don't have any bookings yet.</p>
+                <a href="/destinations" class="book-now-btn">Book Your First Stay</a>
+            </div>
+        <% } %>
     </section>
 
     <section class="stats-container">
-        <% const stats = [
-            { number: '5', label: 'Luxury Locations' },
-            { number: '150+', label: 'Staff Members' },
-            { number: '1000+', label: 'Happy Guests' },
-            { number: '95%', label: 'Satisfaction Rate' }
-        ]; %>
-        
-        <% stats.forEach(stat => { %>
-            <div class="stat-card">
-                <div class="stat-number"><%= stat.number %></div>
-                <div class="stat-label"><%= stat.label %></div>
-            </div>
-        <% }); %>
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Luxury Locations</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Staff Members</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Happy Guests</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
     </section>
 
-    <section class="department-grid">
-        <% const departments = [
-            {
-                name: 'Accommodations',
-                subdepartments: ['Luxury Suites', 'Executive Rooms', 'Presidential Villas', 'Ocean View Rooms']
-            },
-            {
-                name: 'Wellness Center',
-                subdepartments: ['Spa Services', 'Yoga Studio', 'Fitness Center', 'Meditation Spaces']
-            },
-            {
-                name: 'Dining',
-                subdepartments: ['Fine Dining Restaurant', 'Casual Bistro', 'Rooftop Bar', 'Private Dining']
-            },
-            {
-                name: 'Events & Meetings',
-                subdepartments: ['Conference Rooms', 'Wedding Venues', 'Banquet Halls', 'Business Center']
-            },
-            {
-                name: 'Recreation',
-                subdepartments: ['Swimming Pools', 'Beach Access', 'Tennis Courts', 'Golf Course']
-            },
-            {
-                name: 'Guest Services',
-                subdepartments: ['Concierge', 'Transportation', 'Housekeeping', '24/7 Room Service']
-            }
-        ]; %>
-        
-        <% departments.forEach(department => { %>
-            <div class="department-card">
-                <h2><%= department.name %></h2>
-                <ul class="subdepartment-list">
-                    <% department.subdepartments.forEach(subdepartment => { %>
-                        <li><%= subdepartment %></li>
-                    <% }); %>
-                </ul>
-            </div>
-        <% }); %>
+    <section class="experiences-section">
+        <h2>Discover Our Experiences</h2>
+        <div class="experiences-grid">
+            <a href="/wellness" class="experience-card">
+                <h3>Wellness</h3>
+                <p>Rejuvenate your body and mind with our spa treatments and wellness programs</p>
+            </a>
+            <a href="/destinations" class="experience-card">
+                <h3>Destinations</h3>
+                <p>Explore our exclusive locations around the world</p>
+            </a>
+            <a href="/innovation" class="experience-card">
+                <h3>Experiences</h3>
+                <p>Discover unique activities and adventures at each of our destinations</p>
+            </a>
+        </div>
     </section>
 </div>
 

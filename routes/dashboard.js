@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { protect } = require('../middlewares/authMiddleware');
+const Booking = require('../models/Booking');
 
 // Dashboard page - Protected route, requires authentication
 router.get('/', protect, async (req, res) => {
@@ -41,13 +42,29 @@ router.get('/', protect, async (req, res) => {
 
   // Get user info from request (added by auth middleware)
   const user = req.user;
-
-  res.render('dashboard', {
-    title: 'Dashboard',
-    departments: departments,
-    stats: stats,
-    user: user // Pass user info to the template
-  });
+  
+  // Fetch user's bookings from database
+  try {
+    const bookings = await Booking.find({ user: user._id }).sort({ bookingDate: -1 });
+    
+    res.render('dashboard', {
+      title: 'Dashboard',
+      departments: departments,
+      stats: stats,
+      user: user, // Pass user info to the template
+      bookings: bookings // Pass bookings to the template
+    });
+  } catch (error) {
+    console.error('Error fetching bookings:', error);
+    res.render('dashboard', {
+      title: 'Dashboard',
+      departments: departments,
+      stats: stats,
+      user: user,
+      bookings: [],
+      error: 'Failed to load bookings'
+    });
+  }
 });
 
 module.exports = router;
