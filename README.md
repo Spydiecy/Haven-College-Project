@@ -145,7 +145,6 @@ haven-chain-of-hotels/
 
 ## 📱 Screenshots
 
-*[Insert screenshots of key pages here]*
 
 ## 🔒 Security Features
 
@@ -156,9 +155,6 @@ haven-chain-of-hotels/
 - **Rate Limiting**: Protection against brute force attacks
 - **Content Security Policy**: Protection against XSS attacks
 
-## 📝 Testing
-
-*[Include information about how to run tests if you have them]*
 
 ## 👥 Contributors
 
