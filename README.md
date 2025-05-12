@@ -162,9 +162,10 @@ haven-chain-of-hotels/
 
 ## 👥 Contributors
 
-- [Your Name] - Lead Developer
-- [Team Member 1] - Frontend Developer
-- [Team Member 2] - Backend Developer
+- Tanishq Gupta
+- Krishna
+- Ansh Jolly
+- Arjit Pandey
 
 ## 📄 License
 
@@ -172,4 +173,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-*This project was developed as part of [Your University/College Name] coursework.*
+*This project was developed as part of [Chitkara University/Btech] coursework.*
