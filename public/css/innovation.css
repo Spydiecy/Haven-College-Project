@@ -1,0 +1,509 @@
+/* Innovation Page Styles */
+
+/* Hero Section */
+.marquee-container {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.marquee-item {
+    font-size: 125px;
+    font-weight: 100;
+    padding-right: 50px;
+    flex-shrink: 0;
+    letter-spacing: 2px;
+}
+
+.video-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Introduction Section */
+.intro-section {
+    padding: 8rem 2rem;
+    background-color: #f4f1eb;
+    color: #2b3530;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Innovation Approach Section */
+.approach-section {
+    padding: 8rem 2rem;
+    background-color: #fff;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.approach-item {
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+}
+
+.approach-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.approach-icon {
+    margin-bottom: 1.5rem;
+}
+
+.approach-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.approach-item h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #2b3530;
+}
+
+.approach-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Innovation Areas Section */
+.innovation-areas {
+    padding: 8rem 2rem;
+    background-color: #f4f1eb;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #2b3530;
+    letter-spacing: 1px;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.area-card {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.area-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.area-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.area-card:hover .area-image img {
+    transform: scale(1.05);
+}
+
+.area-content {
+    padding: 2rem;
+}
+
+.area-content h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #2b3530;
+}
+
+.area-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.learn-more {
+    color: #2b3530;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.learn-more::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #2b3530;
+    transition: width 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #000;
+}
+
+.learn-more:hover::after {
+    width: 100%;
+}
+
+/* Innovation Process Section */
+.process-section {
+    padding: 8rem 2rem;
+    background-color: #fff;
+}
+
+.process-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(43, 53, 48, 0.2);
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background-color: #2b3530;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content {
+    padding-top: 0.5rem;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #2b3530;
+}
+
+.step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Sustainability Section */
+.sustainability-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(rgba(43, 53, 48, 0.9), rgba(43, 53, 48, 0.9)), url('/images/innovation/sustainability-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.sustainability-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sustainability-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.sustainability-content>p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sustainability-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: all 0.6s ease;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 8rem 2rem;
+    background-color: #f4f1eb;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #2b3530;
+    letter-spacing: 1px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #2b3530;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1c2621;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .areas-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .sustainability-features {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .intro-section,
+    .approach-section,
+    .innovation-areas,
+    .process-section,
+    .sustainability-section,
+    .cta-section {
+        padding: 5rem 1.5rem;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .process-timeline::before {
+        display: none;
+    }
+
+    .process-step {
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-bottom: 1.5rem;
+        margin-right: 0;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-content h2,
+    .section-title,
+    .sustainability-content h2,
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-content p,
+    .sustainability-content>p,
+    .cta-content p {
+        font-size: 1rem;
+    }
+}

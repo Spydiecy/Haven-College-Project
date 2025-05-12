@@ -5,10 +5,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // Expert data
   const experts = [
-    { name: 'Dr. Amara Silva', title: 'Integrative Medicine', bio: 'Board-certified in both Western medicine and Ayurvedic healing traditions, Dr. Silva oversees our comprehensive wellness assessments and personalized treatment protocols.', image: '/images/team/wellness-expert1.jpg' },
-    { name: 'Master Kai Zhang', title: 'Movement & Meditation', bio: 'With over 30 years of practice in Tai Chi, Qigong, and meditation, Master Zhang guides our guests in mindful movement and cultivating present awareness.', image: '/images/team/wellness-expert2.jpg' },
-    { name: 'Elena Vasquez', title: 'Nutritional Sciences', bio: 'A pioneer in functional nutrition, Elena creates personalized nutritional plans that support optimal cellular health, energy balance, and intuitive eating practices.', image: '/images/team/wellness-expert3.jpg' },
-    { name: 'Dr. James Okonjo', title: 'Therapeutic Psychology', bio: 'Specializing in mind-body connection and emotional release techniques, Dr. Okonjo facilitates profound personal transformation and emotional healing.', image: '/images/team/wellness-expert4.jpg' }
+    { name: 'Dr. Amara Silva', title: 'Integrative Medicine', bio: 'Board-certified in both Western medicine and Ayurvedic healing traditions, Dr. Silva oversees our comprehensive wellness assessments and personalized treatment protocols.', image: '/images/team/arjit.jpg' },
+    { name: 'Master Kai Zhang', title: 'Movement & Meditation', bio: 'With over 30 years of practice in Tai Chi, Qigong, and meditation, Master Zhang guides our guests in mindful movement and cultivating present awareness.', image: '/images/team/tanishq.jpg' },
+    { name: 'Elena Vasquez', title: 'Nutritional Sciences', bio: 'A pioneer in functional nutrition, Elena creates personalized nutritional plans that support optimal cellular health, energy balance, and intuitive eating practices.', image: '/images/team/jolly.jpg' },
+    { name: 'Dr. James Okonjo', title: 'Therapeutic Psychology', bio: 'Specializing in mind-body connection and emotional release techniques, Dr. Okonjo facilitates profound personal transformation and emotional healing.', image: '/images/team/krishna.jpg' }
   ];
 
   // Testimonials data

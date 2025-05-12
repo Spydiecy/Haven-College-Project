@@ -1,19 +1,58 @@
 /* Wellness page specific styles */
 
 /* Hero Section */
-.hero-section {
-    height: 70vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-image: url('https://i.imgur.com/WUIeXnO.jpeg');
-    background-size: cover;
-    background-position: center;
+.marquee-container {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    transform: translateZ(0);
 }
 
-.hero-overlay {
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.marquee-item {
+    font-size: 125px;
+    font-weight: 100;
+    padding-right: 50px;
+    flex-shrink: 0;
+    letter-spacing: 2px;
+}
+
+.video-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.video-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -22,29 +61,10 @@
     background: rgba(0, 0, 0, 0.4);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 0 2rem;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    opacity: 0.9;
-}
-
 /* Programs Section */
 .programs-section {
-    padding: 6rem 4rem;
+    padding: 7rem 5rem;
+    /* Increased padding for more breathing room */
     background: #1c2621;
 }
 
@@ -52,22 +72,28 @@
     text-align: center;
     font-size: 2.5rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    /* Increased spacing */
 }
 
 .section-intro {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
+    /* Increased bottom margin */
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Slightly increased for better readability */
     opacity: 0.9;
+    padding: 0 1rem;
+    /* Added horizontal padding for mobile */
 }
 
 .programs-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
+    /* Increased gap for better separation */
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -75,18 +101,27 @@
 .program-card {
     display: flex;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border-radius: 12px;
+    /* Slightly increased */
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Added box-shadow transition */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
 }
 
 .program-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+    /* Slightly more pronounced hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadow on hover */
 }
 
 .program-image {
     width: 40%;
     overflow: hidden;
+    position: relative;
+    /* Added for parallax effect */
 }
 
 .program-image img {
@@ -102,28 +137,35 @@
 
 .program-content {
     width: 60%;
-    padding: 2rem;
+    padding: 2.5rem;
+    /* Increased padding */
 }
 
 .program-content h3 {
     font-size: 1.8rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    /* Increased spacing */
 }
 
 .program-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    /* Increased spacing */
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Improved line height */
     opacity: 0.9;
 }
 
 .program-features {
     list-style: none;
+    margin-top: 1.25rem;
+    /* Added top margin */
 }
 
 .program-features li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    /* Increased spacing */
     padding-left: 1.5rem;
     position: relative;
     font-size: 0.9rem;
@@ -137,42 +179,61 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Experts Section */
+/* Experts Section - FIXED LAYOUT */
 .experts-section {
-    padding: 6rem 4rem;
+    padding: 7rem 5rem;
+    /* Maintained padding */
 }
 
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
+    /* Maintained horizontal padding for mobile */
 }
 
+/* FIXED: Changed grid layout to use specific column counts at different breakpoints */
 .experts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    /* Default to 4 columns on large screens */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    /* Maintained gap */
+    margin-top: 4rem;
+    /* Maintained top margin */
 }
 
+/* FIXED: Added display:flex and flex-direction to ensure consistent card heights */
 .expert-card {
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 2rem;
+    border-radius: 12px;
+    padding: 2.5rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* FIXED: Added height property to ensure consistent card heights */
+    height: 100%;
+    /* FIXED: Added min-height to prevent cards from being too short */
+    min-height: 400px;
 }
 
 .expert-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
     background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .expert-image {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
+    position: relative;
+    /* FIXED: Added flex-shrink to prevent image from shrinking */
+    flex-shrink: 0;
 }
 
 .expert-image img {
@@ -182,42 +243,64 @@
 }
 
 .expert-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    /* FIXED: Added flex-shrink to prevent title from shrinking */
+    flex-shrink: 0;
 }
 
 .expert-title {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    /* FIXED: Added flex-shrink to prevent subtitle from shrinking */
+    flex-shrink: 0;
 }
 
 .expert-bio {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.7;
     opacity: 0.8;
+    /* FIXED: Added flex-grow to allow bio to take remaining space */
+    flex-grow: 1;
+    /* FIXED: Added margin-bottom to ensure consistent spacing */
+    margin-bottom: 0;
 }
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 6rem 4rem;
+    padding: 7rem 5rem;
+    /* Increased padding */
     background: #1c2621;
 }
 
 .testimonials-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Slightly wider cards */
+    gap: 2.5rem;
+    /* Increased gap */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .testimonial {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 2rem;
+    border-radius: 12px;
+    /* Slightly increased */
+    padding: 2.5rem;
+    /* Increased padding */
     position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadow on hover */
 }
 
 .testimonial-content {
@@ -225,27 +308,33 @@
 }
 
 .testimonial-content p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    /* Slightly larger */
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+    /* Increased spacing */
     font-style: italic;
     opacity: 0.9;
 }
 
 .testimonial-author h4 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    /* Slightly larger */
     font-weight: 400;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
+    /* Increased spacing */
 }
 
 .testimonial-author p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    /* Slightly larger */
     opacity: 0.7;
 }
 
 /* CTA Section */
 .cta-section {
-    padding: 6rem 4rem;
+    padding: 7rem 5rem;
+    /* Increased padding */
 }
 
 .cta-container {
@@ -254,14 +343,20 @@
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border-radius: 12px;
+    /* Slightly increased */
     overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Added shadow for depth */
 }
 
 .cta-image {
     width: 50%;
-    height: 400px;
+    height: 450px;
+    /* Increased height */
     overflow: hidden;
+    position: relative;
+    /* Added for parallax effect */
 }
 
 .cta-image img {
@@ -272,28 +367,34 @@
 
 .cta-content {
     width: 50%;
-    padding: 3rem;
+    padding: 3.5rem;
+    /* Increased padding */
 }
 
 .cta-content h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    /* Increased spacing */
 }
 
 .cta-content p {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    /* Increased spacing */
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Improved line height */
     opacity: 0.9;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.2rem;
+    /* Slightly larger */
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+    border-radius: 6px;
+    /* Slightly increased */
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -302,31 +403,71 @@
 
 .cta-button:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    /* Slightly more pronounced */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Added shadow on hover */
 }
 
-/* Responsive Design */
+/* Responsive Design - IMPROVED FOR EXPERTS SECTION */
+/* FIXED: Added specific breakpoints for experts grid */
+@media (max-width: 1200px) {
+
+    /* Switch to 3 columns on large tablets/small desktops */
+    .experts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .programs-container {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+        /* Added max-width for better control */
+    }
+}
+
 @media (max-width: 992px) {
+
+    /* Switch to 2 columns on tablets */
+    .experts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .program-card {
         flex-direction: column;
     }
-    
-    .program-image, 
+
+    .program-image,
     .program-content {
         width: 100%;
     }
-    
+
     .program-image {
-        height: 250px;
+        height: 300px;
+        /* Increased height */
     }
-    
+
     .cta-container {
         flex-direction: column;
     }
-    
-    .cta-image, 
+
+    .cta-image,
     .cta-content {
         width: 100%;
+    }
+
+    .cta-content {
+        padding: 3rem 2.5rem;
+        /* Adjusted padding */
+    }
+
+    .programs-section,
+    .experts-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 5rem 3rem;
+        /* Adjusted padding */
     }
 }
 
@@ -334,20 +475,372 @@
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
+    .hero-content {
+        padding: 0 1.5rem;
+        /* Adjusted for mobile */
+    }
+
     .programs-section,
     .experts-section,
     .testimonials-section,
     .cta-section {
-        padding: 4rem 2rem;
+        padding: 4rem 1.5rem;
+        /* Adjusted padding */
     }
-    
+
     .section-title,
     .cta-content h2 {
         font-size: 2rem;
     }
-    
-    .programs-container {
+
+    .expert-card,
+    .testimonial {
+        padding: 2rem;
+        /* Adjusted padding */
+    }
+
+    /* FIXED: Ensure expert cards have appropriate min-height on smaller screens */
+    .expert-card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Switch to 1 column on mobile */
+    .experts-grid {
         grid-template-columns: 1fr;
     }
+
+    /* FIXED: Adjust min-height for single column layout */
+    .expert-card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+        /* Further reduced for very small screens */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .program-content {
+        padding: 1.75rem;
+        /* Adjusted padding */
+    }
+
+    .cta-content {
+        padding: 2rem;
+        /* Adjusted padding */
+    }
+
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Experts Section - ENHANCED LAYOUT & ANIMATIONS */
+.experts-section {
+    padding: 7rem 5rem;
+    position: relative;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* FIXED: Improved grid layout with exact height control */
+.experts-grid {
+    display: grid;
+    /* Default to 4 columns on large screens with equal width */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+/* FIXED: Enhanced card with strict height control and improved animations */
+.expert-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    /* FIXED: Use fixed height for perfect alignment */
+    height: 450px;
+    /* ENHANCED: Improved transitions for smoother animations */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* ENHANCED: Added overflow control */
+    overflow: hidden;
+    position: relative;
+}
+
+/* ENHANCED: Added subtle border glow effect on hover */
+.expert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+}
+
+.expert-card:hover::before {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.expert-card:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ENHANCED: Added content wrapper for better organization */
+.expert-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.expert-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    position: relative;
+    flex-shrink: 0;
+    /* ENHANCED: Added subtle border */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* ENHANCED: Added transition for hover effect */
+    transition: transform 0.5s ease, border 0.3s ease;
+}
+
+/* ENHANCED: Image hover effect */
+.expert-card:hover .expert-image {
+    transform: scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.expert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ENHANCED: Added subtle zoom effect */
+    transition: transform 0.8s ease;
+}
+
+/* ENHANCED: Image zoom on hover */
+.expert-card:hover .expert-image img {
+    transform: scale(1.1);
+}
+
+.expert-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+    /* ENHANCED: Added transition for text */
+    transition: color 0.3s ease;
+}
+
+/* ENHANCED: Title color change on hover */
+.expert-card:hover h3 {
+    color: rgba(255, 255, 255, 1);
+}
+
+.expert-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+    /* ENHANCED: Added subtle highlight effect */
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+/* ENHANCED: Specialty highlight on hover */
+.expert-card:hover .expert-title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.expert-bio {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    /* FIXED: Ensure bio takes exactly the space needed */
+    flex: 1;
+    /* ENHANCED: Added transition for text */
+    transition: opacity 0.3s ease;
+    /* FIXED: Added overflow control for consistent height */
+    overflow: hidden;
+    /* FIXED: Added padding to ensure text doesn't touch bottom */
+    padding-bottom: 0.5rem;
+}
+
+/* ENHANCED: Bio text becomes more visible on hover */
+.expert-card:hover .expert-bio {
+    opacity: 1;
+}
+
+/* ENHANCED: Added subtle indicator for more content */
+.expert-card::after {
+    content: '';
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.expert-card:hover::after {
+    width: 60px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design - IMPROVED FOR EXPERTS SECTION */
+@media (max-width: 1200px) {
+
+    /* Switch to 3 columns on large tablets/small desktops */
+    .experts-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* FIXED: Adjust height for 3-column layout */
+    .expert-card {
+        height: 470px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    /* Switch to 2 columns on tablets */
+    .experts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* FIXED: Adjust height for 2-column layout */
+    .expert-card {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experts-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .expert-card {
+        padding: 2rem;
+        /* FIXED: Adjust height for smaller screens */
+        height: 430px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Switch to 1 column on mobile */
+    .experts-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* FIXED: Adjust height for single column layout */
+    .expert-card {
+        height: 400px;
+    }
+}
+
+/* Additional animation styles for experts section */
+
+/* Entrance animation base styles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle background pulse animation */
+@keyframes subtlePulse {
+    0% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Apply pulse animation to cards */
+.expert-card {
+    animation: subtlePulse 4s infinite ease-in-out;
+    /* Each card gets a slightly different animation timing */
+    animation-delay: calc(var(--card-index, 0) * 1s);
+}
+
+/* Ensure cards have perfect alignment with flexbox backup */
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    /* Backup alignment method */
+    align-items: stretch;
+}
+
+/* Ensure all cards in a row are the same height */
+.expert-card {
+    height: 560px;
+    /* Fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure content is properly distributed */
+.expert-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Fixed positioning for bio to ensure alignment */
+.expert-bio {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    /* Space for the indicator */
 }

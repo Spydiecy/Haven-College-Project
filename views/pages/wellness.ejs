@@ -1,198 +1,379 @@
-<%- include('../partials/header', { title: 'Wellness', cssFile: 'wellness' }) %>
+<%- include('../partials/header', { title: 'Wellness' , cssFile: 'wellness' }) %>
 
-<%- include('../partials/navbar') %>
+    <%- include('../partials/navbar') %>
 
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Wellness Sanctuary</h1>
-        <p>Experience transformative wellness programs that nurture the mind, body, and spirit</p>
-    </div>
-</section>
-
-<!-- Approach Section -->
-<section class="content-section">
-    <div class="split-container">
-        <div class="content-container">
-            <div class="content">
-                <h2>Our Approach</h2>
-                <p>At Haven, we embrace a holistic approach to wellness that integrates ancient wisdom with modern science. Our programs are designed to create profound shifts in wellbeing through personalized experiences that address the unique needs of each guest.</p>
-                <p>We believe true wellness emerges from the harmonious balance of physical vitality, mental clarity, emotional wellbeing, and spiritual connection.</p>
+        <!-- Hero Section -->
+        <div class="video-section">
+            <div class="video-background">
+                <video autoplay loop muted playsinline>
+                    <source src="videos/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
             </div>
-        </div>
-        <div class="image-container">
-            <div class="parallax-image" style="background-image: url('https://i.imgur.com/WUIeXnO.jpeg');"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Programs Section -->
-<section class="programs-section">
-    <h2 class="section-title">Wellness Programs</h2>
-    <div class="programs-container">
-        <div class="program-card">
-            <div class="program-image">
-                <img src="images/hotel2.jpg" alt="Mindfulness & Meditation">
-            </div>
-            <div class="program-content">
-                <h3>Mindfulness & Meditation</h3>
-                <p>Guided practices to cultivate presence, reduce stress, and enhance mental clarity through various meditation techniques.</p>
-                <ul class="program-features">
-                    <li>Daily guided meditation sessions</li>
-                    <li>Mindful movement practices</li>
-                    <li>Breath work workshops</li>
-                    <li>Silent retreats</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="program-card">
-            <div class="program-image">
-                <img src="images/hotel4.jpg" alt="Body Restoration">
-            </div>
-            <div class="program-content">
-                <h3>Body Restoration</h3>
-                <p>Comprehensive physical wellness programs combining therapeutic treatments, nutrition, and movement to revitalize the body.</p>
-                <ul class="program-features">
-                    <li>Personalized fitness routines</li>
-                    <li>Therapeutic massage treatments</li>
-                    <li>Hydrotherapy sessions</li>
-                    <li>Nutrition consultations</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="program-card">
-            <div class="program-image">
-                <img src="images/hotel6.jpg" alt="Emotional Wellbeing">
-            </div>
-            <div class="program-content">
-                <h3>Emotional Wellbeing</h3>
-                <p>Transformative practices and therapies designed to process emotions, heal past traumas, and cultivate inner peace.</p>
-                <ul class="program-features">
-                    <li>Emotional intelligence workshops</li>
-                    <li>Stress management techniques</li>
-                    <li>Sound healing ceremonies</li>
-                    <li>Nature therapy experiences</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="program-card">
-            <div class="program-image">
-                <img src="images/hotel1.jpg" alt="Spiritual Connection">
-            </div>
-            <div class="program-content">
-                <h3>Spiritual Connection</h3>
-                <p>Practices that nurture a deeper connection to self, community, nature, and the greater universe.</p>
-                <ul class="program-features">
-                    <li>Sunrise and sunset ceremonies</li>
-                    <li>Sacred site visits and pilgrimages</li>
-                    <li>Traditional healing rituals</li>
-                    <li>Personal purpose exploration</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Expert Team Section -->
-<section class="experts-section">
-    <div class="content-container">
-        <h2>Our Wellness Experts</h2>
-        <p class="section-intro">Our diverse team of internationally recognized practitioners brings decades of specialized experience to create transformative wellness journeys.</p>
-        
-        <div class="experts-grid">
-            <div class="expert-card">
-                <div class="expert-image">
-                    <img src="images/team/krishna.jpg" alt="Dr. Amara Silva">
-                </div>
-                <h3>Dr. Amara Silva</h3>
-                <p class="expert-title">Integrative Medicine</p>
-                <p class="expert-bio">Board-certified in both Western medicine and Ayurvedic healing traditions, Dr. Silva oversees our comprehensive wellness assessments and personalized treatment protocols.</p>
-            </div>
-            
-            <div class="expert-card">
-                <div class="expert-image">
-                    <img src="images/team/jolly.jpg" alt="Master Kai Zhang">
-                </div>
-                <h3>Master Kai Zhang</h3>
-                <p class="expert-title">Movement & Meditation</p>
-                <p class="expert-bio">With over 30 years of practice in Tai Chi, Qigong, and meditation, Master Zhang guides our guests in mindful movement and cultivating present awareness.</p>
-            </div>
-            
-            <div class="expert-card">
-                <div class="expert-image">
-                    <img src="images/team/arjit.jpg" alt="Elena Vasquez">
-                </div>
-                <h3>Elena Vasquez</h3>
-                <p class="expert-title">Nutritional Sciences</p>
-                <p class="expert-bio">A pioneer in functional nutrition, Elena creates personalized nutritional plans that support optimal cellular health, energy balance, and intuitive eating practices.</p>
-            </div>
-            
-            <div class="expert-card">
-                <div class="expert-image">
-                    <img src="images/team/tanishq.jpg" alt="Dr. James Okonjo">
-                </div>
-                <h3>Dr. James Okonjo</h3>
-                <p class="expert-title">Therapeutic Psychology</p>
-                <p class="expert-bio">Specializing in mind-body connection and emotional release techniques, Dr. Okonjo facilitates profound personal transformation and emotional healing.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="testimonials-section">
-    <h2 class="section-title">Transformation Stories</h2>
-    <div class="testimonials-container">
-        <div class="testimonial">
-            <div class="testimonial-content">
-                <p>"My experience at Haven completely transformed my approach to wellbeing. The personalized program addressed not just my physical health but helped me resolve emotional patterns I'd carried for decades. Six months later, I'm still implementing the practices I learned."</p>
-                <div class="testimonial-author">
-                    <h4>Sarah J.</h4>
-                    <p>Executive, New York</p>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span class="marquee-item">Wellness • Wellness • Wellness • Wellness</span>
+                    <span class="marquee-item">Wellness • Wellness • Wellness • Wellness </span>
                 </div>
             </div>
         </div>
-        
-        <div class="testimonial">
-            <div class="testimonial-content">
-                <p>"After years of chronic stress and burnout, the wellness program at Haven gave me practical tools to reclaim balance in my life. The integration of cutting-edge science with ancient wisdom practices created a powerful healing experience."</p>
-                <div class="testimonial-author">
-                    <h4>Michael T.</h4>
-                    <p>Entrepreneur, London</p>
+
+        <!-- Approach Section -->
+        <section class="content-section">
+            <div class="split-container">
+                <div class="content-container">
+                    <div class="content">
+                        <h2>Our Approach</h2>
+                        <p>At Haven, we embrace a holistic approach to wellness that integrates ancient wisdom with
+                            modern science. Our programs are designed to create profound shifts in wellbeing through
+                            personalized experiences that address the unique needs of each guest.</p>
+                        <p>We believe true wellness emerges from the harmonious balance of physical vitality, mental
+                            clarity, emotional wellbeing, and spiritual connection.</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="parallax-image" style="background-image: url('images/wellnessapproach.avif');">
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="testimonial">
-            <div class="testimonial-content">
-                <p>"The mindfulness retreats at Haven have become an essential part of my yearly wellness routine. Each visit deepens my practice and provides clarity and purpose that sustains me through life's challenges."</p>
-                <div class="testimonial-author">
-                    <h4>Priya M.</h4>
-                    <p>Artist, Mumbai</p>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs-section">
+            <h2 class="section-title">Wellness Programs</h2>
+            <div class="programs-container">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/wellness1.jpg" alt="Mindfulness & Meditation">
+                    </div>
+                    <div class="program-content">
+                        <h3>Mindfulness & Meditation</h3>
+                        <p>Guided practices to cultivate presence, reduce stress, and enhance mental clarity through
+                            various meditation techniques.</p>
+                        <ul class="program-features">
+                            <li>Daily guided meditation sessions</li>
+                            <li>Mindful movement practices</li>
+                            <li>Breath work workshops</li>
+                            <li>Silent retreats</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/wellness2.jpg" alt="Body Restoration">
+                    </div>
+                    <div class="program-content">
+                        <h3>Body Restoration</h3>
+                        <p>Comprehensive physical wellness programs combining therapeutic treatments, nutrition, and
+                            movement to revitalize the body.</p>
+                        <ul class="program-features">
+                            <li>Personalized fitness routines</li>
+                            <li>Therapeutic massage treatments</li>
+                            <li>Hydrotherapy sessions</li>
+                            <li>Nutrition consultations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/wellness3.jpg" alt="Emotional Wellbeing">
+                    </div>
+                    <div class="program-content">
+                        <h3>Emotional Wellbeing</h3>
+                        <p>Transformative practices and therapies designed to process emotions, heal past traumas, and
+                            cultivate inner peace.</p>
+                        <ul class="program-features">
+                            <li>Emotional intelligence workshops</li>
+                            <li>Stress management techniques</li>
+                            <li>Sound healing ceremonies</li>
+                            <li>Nature therapy experiences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/wellness4.jpg" alt="Spiritual Connection">
+                    </div>
+                    <div class="program-content">
+                        <h3>Spiritual Connection</h3>
+                        <p>Practices that nurture a deeper connection to self, community, nature, and the greater
+                            universe.</p>
+                        <ul class="program-features">
+                            <li>Sunrise and sunset ceremonies</li>
+                            <li>Sacred site visits and pilgrimages</li>
+                            <li>Traditional healing rituals</li>
+                            <li>Personal purpose exploration</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- CTA Section -->
-<section class="content-section cta-section">
-    <div class="cta-container">
-        <div class="cta-image">
-            <img src="https://i.imgur.com/rGUSGdp.jpeg" alt="Wellness journey">
-        </div>
-        <div class="cta-content">
-            <h2>Begin Your Wellness Journey</h2>
-            <p>Our wellness advisors are available to help you select the perfect program for your unique needs and goals.</p>
-            <a href="/contact" class="cta-button">Contact Us</a>
-        </div>
-    </div>
-</section>
+        <!-- Expert Team Section -->
+        <section class="experts-section">
+            <div class="content-container">
+                <h2 class="section-title">Our Experts</h2>
+                <p class="section-intro">Our team of wellness professionals brings years of experience and passion to
+                    create transformative experiences tailored to your needs.</p>
 
-<%- include('../partials/footer-content') %>
+                <div class="experts-grid">
+                    <!-- Expert Card 1 -->
+                    <div class="expert-card">
+                        <div class="expert-content-wrapper">
+                            <div class="expert-image">
+                                <img src="images/expert1.jpg" alt="Sarah Johnson">
+                            </div>
+                            <h3>Sarah Johnson</h3>
+                            <p class="expert-title">Yoga Instructor</p>
+                            <p class="expert-bio">With over 10 years of experience in various yoga traditions, Sarah
+                                specializes in restorative practices that foster relaxation and healing.</p>
+                        </div>
+                    </div>
 
-<%- include('../partials/footer', { jsFile: 'wellness' }) %>
+                    <!-- Expert Card 2 -->
+                    <div class="expert-card">
+                        <div class="expert-content-wrapper">
+                            <div class="expert-image">
+                                <img src="images/expert2.jpg" alt="Michael Chen">
+                            </div>
+                            <h3>Michael Chen</h3>
+                            <p class="expert-title">Meditation Coach</p>
+                            <p class="expert-bio">Michael guides guests through mindfulness practices that enhance
+                                mental clarity and emotional balance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Expert Card 3 -->
+                    <div class="expert-card">
+                        <div class="expert-content-wrapper">
+                            <div class="expert-image">
+                                <img src="images/expert3.jpg" alt="Elena Rodriguez">
+                            </div>
+                            <h3>Elena Rodriguez</h3>
+                            <p class="expert-title">Nutritionist</p>
+                            <p class="expert-bio">Elena creates personalized nutrition plans that support overall
+                                wellness and address specific health concerns.</p>
+                        </div>
+                    </div>
+
+                    <!-- Expert Card 4 -->
+                    <div class="expert-card">
+                        <div class="expert-content-wrapper">
+                            <div class="expert-image">
+                                <img src="images/expert4.jpg" alt="David Thompson">
+                            </div>
+                            <h3>David Thompson</h3>
+                            <p class="expert-title">Massage Therapist</p>
+                            <p class="expert-bio">David specializes in therapeutic massage techniques that release
+                                tension and promote deep relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2 class="section-title">Transformation Stories</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"My experience at Haven completely transformed my approach to wellbeing. The personalized
+                            program addressed not just my physical health but helped me resolve emotional patterns I'd
+                            carried for decades. Six months later, I'm still implementing the practices I learned."</p>
+                        <div class="testimonial-author">
+                            <h4>Jake Romano</h4>
+                            <p>Executive, New York</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"After years of chronic stress and burnout, the wellness program at Haven gave me practical
+                            tools to reclaim balance in my life. The integration of cutting-edge science with ancient
+                            wisdom practices created a powerful healing experience."</p>
+                        <div class="testimonial-author">
+                            <h4>Oliver Kensington</h4>
+                            <p>Entrepreneur, London</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The mindfulness retreats at Haven have become an essential part of my yearly wellness
+                            routine. Each visit deepens my practice and provides clarity and purpose that sustains me
+                            through life's challenges."</p>
+                        <div class="testimonial-author">
+                            <h4>Kavya Iyer</h4>
+                            <p>Artist, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="content-section cta-section">
+            <div class="cta-container">
+                <div class="cta-image">
+                    <img src="https://i.imgur.com/rGUSGdp.jpeg" alt="Wellness journey">
+                </div>
+                <div class="cta-content">
+                    <h2>Begin Your Wellness Journey</h2>
+                    <p>Our wellness advisors are available to help you select the perfect program for your unique needs
+                        and goals.</p>
+                    <a href="/contact" class="cta-button">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <body>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+            <script>
+                // Initialize GSAP and ScrollTrigger
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Wait for DOM to be fully loaded
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Subtle parallax effect for program images
+                    const programImages = document.querySelectorAll('.program-image img');
+                    programImages.forEach(img => {
+                        gsap.fromTo(img,
+                            { y: -20 },
+                            {
+                                y: 20,
+                                scrollTrigger: {
+                                    trigger: img.parentElement,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: 1.5, // Smooth scrubbing effect
+                                    toggleActions: "play none none reverse"
+                                }
+                            }
+                        );
+                    });
+
+                    // Subtle scale effect for expert images
+                    const expertImages = document.querySelectorAll('.expert-image img');
+                    expertImages.forEach(img => {
+                        gsap.fromTo(img,
+                            { scale: 1 },
+                            {
+                                scale: 1.15,
+                                scrollTrigger: {
+                                    trigger: img.parentElement.parentElement,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: 2, // Smoother scrubbing for more elegant motion
+                                    toggleActions: "play none none reverse"
+                                }
+                            }
+                        );
+                    });
+
+                    // Elegant parallax for CTA image
+                    const ctaImage = document.querySelector('.cta-image img');
+                    if (ctaImage) {
+                        gsap.fromTo(ctaImage,
+                            { y: -30 },
+                            {
+                                y: 30,
+                                scrollTrigger: {
+                                    trigger: ctaImage.parentElement,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: 2,
+                                    toggleActions: "play none none reverse"
+                                }
+                            }
+                        );
+                    }
+
+                    // Optional: Subtle parallax for hero section background
+                    const heroSection = document.querySelector('.hero-section');
+                    if (heroSection) {
+                        gsap.fromTo(heroSection,
+                            { backgroundPosition: "50% 0%" },
+                            {
+                                backgroundPosition: "50% 20%",
+                                ease: "none",
+                                scrollTrigger: {
+                                    trigger: heroSection,
+                                    start: "top top",
+                                    end: "bottom top",
+                                    scrub: 1,
+                                    toggleActions: "play none none reverse"
+                                }
+                            }
+                        );
+                    }
+                });
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Function to check if element is in viewport
+                    function isInViewport(element) {
+                        const rect = element.getBoundingClientRect();
+                        return (
+                            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                            rect.bottom >= 0
+                        );
+                    }
+
+                    // Function to animate experts when they come into view
+                    function animateExpertsOnScroll() {
+                        const expertsSection = document.querySelector('.experts-section');
+                        const expertCards = document.querySelectorAll('.expert-card');
+
+                        if (isInViewport(expertsSection)) {
+                            expertCards.forEach((card, index) => {
+                                // Stagger the animations
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 150 * index);
+                            });
+
+                            // Remove scroll listener once animation is done
+                            window.removeEventListener('scroll', animateExpertsOnScroll);
+                        }
+                    }
+
+                    // Add initial styles for animation
+                    const expertCards = document.querySelectorAll('.expert-card');
+                    expertCards.forEach(card => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px)';
+                        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    });
+
+                    // Check on load and scroll
+                    animateExpertsOnScroll();
+                    window.addEventListener('scroll', animateExpertsOnScroll);
+
+                    // Optional: Add hover animation for expert images
+                    expertCards.forEach(card => {
+                        const image = card.querySelector('.expert-image');
+
+                        card.addEventListener('mouseenter', () => {
+                            image.style.transform = 'scale(1.05)';
+                        });
+
+                        card.addEventListener('mouseleave', () => {
+                            image.style.transform = 'scale(1)';
+                        });
+                    });
+                });
+            </script>
+        </body>
+
+        <%- include('../partials/footer-content') %>
+
+            <%- include('../partials/footer', { jsFile: 'wellness' }) %>

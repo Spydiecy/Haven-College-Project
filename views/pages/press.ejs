@@ -1,0 +1,400 @@
+<%- include('../partials/header', { title: 'Press' , cssFile: 'press' }) %>
+
+    <%- include('../partials/navbar') %>
+
+        <!-- Hero Section -->
+        <div class="video-section">
+            <div class="video-background">
+                <img src="/images/pressRoom.jpeg" alt="Hero Image" class="hero-image">
+            </div>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-item">Press Room • Press Room • Press Room • Press Room</span>
+                <span class="marquee-item">Press Room • Press Room • Press Room • Press Room</span>
+            </div>
+        </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <section class="content-section">
+            <div class="split-container">
+                <div class="content-container">
+                    <div class="content">
+                        <h2>Press & Media</h2>
+                        <p>Welcome to the Haven press center. Here you'll find our latest news, press releases,
+                            media resources, and company updates. Our media team is available to assist journalists and
+                            industry analysts with information about Haven.</p>
+                        <p>For press inquiries, please contact our media relations team at <a
+                                href="mailto:press@haven.co" class="content-link">press@haven.co</a></p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="parallax-image" style="background-image: url('/images/mediaCentre.jpg');"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="news-section">
+            <h2 class="section-title">Latest News</h2>
+
+            <div class="news-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="press-release">Press Releases</button>
+                <button class="filter-btn" data-filter="announcement">Announcements</button>
+                <button class="filter-btn" data-filter="award">Awards</button>
+            </div>
+
+            <div class="news-grid">
+                <!-- News Item 1 -->
+                <div class="news-item" data-category="press-release">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">Apr</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Press Release</span>
+                        <h3>Haven Announces New Sustainable Manufacturing Facility in Singapore</h3>
+                        <p>Haven plc, a global specialty chemicals company, today announced the opening of its new
+                            state-of-the-art manufacturing facility in Singapore, designed with sustainability at its
+                            core.</p>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="news-item" data-category="award">
+                    <div class="news-date">
+                        <span class="day">03</span>
+                        <span class="month">Mar</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Award</span>
+                        <h3>Haven Wins Sustainability Innovation Award for Biodegradable Materials</h3>
+                        <p>Haven has been recognized with the prestigious Industry Sustainability Innovation Award
+                            for its groundbreaking work in developing biodegradable materials for consumer products.</p>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="news-item" data-category="announcement">
+                    <div class="news-date">
+                        <span class="day">21</span>
+                        <span class="month">Feb</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Announcement</span>
+                        <h3>Haven Appoints Dr. Sarah Chen as Chief Innovation Officer</h3>
+                        <p>Haven plc is pleased to announce the appointment of Dr. Sarah Chen as Chief Innovation
+                            Officer, effective March 1, 2023. Dr. Chen brings over 20 years of experience in materials
+                            science and sustainable innovation.</p>
+                    </div>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="news-item" data-category="press-release">
+                    <div class="news-date">
+                        <span class="day">10</span>
+                        <span class="month">Jan</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Press Release</span>
+                        <h3>Haven Reports Strong Financial Performance in Q4 2022</h3>
+                        <p>Haven plc today reported strong financial results for the fourth quarter of 2022, with
+                            revenue growth of 8% year-over-year, driven by strong performance in personal care and
+                            coatings segments.</p>
+                    </div>
+                </div>
+
+                <!-- News Item 5 -->
+                <div class="news-item" data-category="announcement">
+                    <div class="news-date">
+                        <span class="day">05</span>
+                        <span class="month">Dec</span>
+                        <span class="year">2022</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Announcement</span>
+                        <h3>Haven Expands Research Capabilities with New Innovation Center</h3>
+                        <p>Haven has announced the expansion of its research capabilities with a new Innovation
+                            Center in Amsterdam, focused on developing sustainable solutions for the personal care and
+                            coatings industries.</p>
+                    </div>
+                </div>
+
+                <!-- News Item 6 -->
+                <div class="news-item" data-category="award">
+                    <div class="news-date">
+                        <span class="day">18</span>
+                        <span class="month">Nov</span>
+                        <span class="year">2022</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">Award</span>
+                        <h3>Haven Named Among Top 50 Most Sustainable Companies</h3>
+                        <p>Haven has been recognized as one of the Top 50 Most Sustainable Companies in the chemical
+                            industry, highlighting the company's commitment to environmental stewardship and responsible
+                            business practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Resources Section -->
+        <!-- Media Resources Section -->
+        <section class="resources-section">
+            <h2 class="section-title">Media Resources</h2>
+            <div class="resources-container">
+                <div class="resource-card">
+                    <div class="resource-icon resource-icon-image"></div>
+                    <h3>Brand Assets</h3>
+                    <p>Download our logo, brand guidelines, and official imagery for media use.</p>
+                    <a href="/downloads/haven-brand-assets.zip" class="resource-link"
+                        download="Haven-Hotels-Brand-Assets.zip" data-resource="brand-assets">
+                        <i class="fas fa-download"></i>Download
+                    </a>
+                    <div class="download-progress" id="progress-brand-assets"></div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon resource-icon-doc"></div>
+                    <h3>Fact Sheets</h3>
+                    <p>Access key information about our company, products, and sustainability initiatives.</p>
+                    <a href="/downloads/haven-fact-sheets.pdf" class="resource-link"
+                        download="Haven-Hotels-Fact-Sheets.pdf" data-resource="fact-sheets">
+                        <i class="fas fa-download"></i>Download
+                    </a>
+                    <div class="download-progress" id="progress-fact-sheets"></div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon resource-icon-video"></div>
+                    <h3>Video Gallery</h3>
+                    <p>Browse our collection of corporate videos, product demonstrations, and interviews.</p>
+                    <a href="/downloads/haven-video-collection.zip" class="resource-link"
+                        download="Haven-Hotels-Videos.zip" data-resource="video-gallery">
+                        <i class="fas fa-download"></i>Download
+                    </a>
+                    <div class="download-progress" id="progress-video-gallery"></div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon resource-icon-report"></div>
+                    <h3>Annual Reports</h3>
+                    <p>Review our annual reports and financial statements from recent years.</p>
+                    <a href="/downloads/haven-annual-report-2023.pdf" class="resource-link"
+                        download="Haven-Hotels-Annual-Report-2023.pdf" data-resource="annual-reports">
+                        <i class="fas fa-download"></i>Download
+                    </a>
+                    <div class="download-progress" id="progress-annual-reports"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Media Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <h2>Media Contact</h2>
+                    <p>For press inquiries, interview requests, or additional information, please contact our media
+                        relations team:</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>Media Relations</h3>
+                            <p>Email: <a href="mailto:press@haven.co">press@haven.co</a></p>
+                            <p>Phone: +44 (0) 20 7067 2999</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>Investor Relations</h3>
+                            <p>Email: <a href="mailto:investors@haven.co">investors@haven.co</a></p>
+                            <p>Phone: +44 (0) 20 7067 2900</p>
+                        </div>
+                    </div>
+
+                    <div class="subscribe-form">
+                        <h3>Subscribe to Press Updates</h3>
+                        <form action="/subscribe" method="POST">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your email address" required>
+                                <button type="submit" class="subscribe-btn">Subscribe</button>
+                            </div>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="consent" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">I consent to receive press updates from Haven</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+        <script>
+            // Initialize GSAP and ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Marquee animation
+                const marqueeContent = document.querySelector('.marquee-content');
+                if (marqueeContent) {
+                    gsap.to(marqueeContent, {
+                        x: "-50%",
+                        ease: "none",
+                        duration: 20,
+                        repeat: -1
+                    });
+                }
+
+                // News items animation
+                const newsItems = document.querySelectorAll('.news-item');
+                newsItems.forEach((item, index) => {
+                    gsap.fromTo(item,
+                        { opacity: 0, y: 50 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scrollTrigger: {
+                                trigger: item,
+                                start: "top 85%",
+                                toggleActions: "play none none none"
+                            },
+                            duration: 0.6,
+                            delay: index * 0.1
+                        }
+                    );
+                });
+
+                // Resource cards animation
+                const resourceCards = document.querySelectorAll('.resource-card');
+                resourceCards.forEach((card, index) => {
+                    gsap.fromTo(card,
+                        { opacity: 0, scale: 0.9 },
+                        {
+                            opacity: 1,
+                            scale: 1,
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top 85%",
+                                toggleActions: "play none none none"
+                            },
+                            duration: 0.5,
+                            delay: index * 0.1
+                        }
+                    );
+                });
+
+                // News filter functionality
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        // Remove active class from all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
+
+                        const filter = this.getAttribute('data-filter');
+
+                        // Filter news items
+                        newsItems.forEach(item => {
+                            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                                gsap.to(item, {
+                                    opacity: 1,
+                                    height: 'auto',
+                                    margin: '0 0 2rem 0',
+                                    duration: 0.4
+                                });
+                            } else {
+                                gsap.to(item, {
+                                    opacity: 0,
+                                    height: 0,
+                                    margin: 0,
+                                    duration: 0.4
+                                });
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            // Download functionality for media resources
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get all download links
+                const downloadLinks = document.querySelectorAll('.resource-link[download]');
+
+                // Add click event listener to each download link
+                downloadLinks.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        // Get the resource type from data attribute
+                        const resourceType = this.getAttribute('data-resource');
+                        const progressBar = document.getElementById(`progress-${resourceType}`);
+
+                        // Simulate download progress
+                        let progress = 0;
+                        const interval = setInterval(() => {
+                            progress += Math.random() * 10;
+                            if (progress >= 100) {
+                                progress = 100;
+                                clearInterval(interval);
+
+                                // Reset progress bar after download completes
+                                setTimeout(() => {
+                                    progressBar.style.width = '0%';
+                                }, 1000);
+                            }
+                            progressBar.style.width = `${progress}%`;
+                        }, 200);
+
+                        // Log download for analytics (you can expand this)
+                        console.log(`Downloaded: ${this.getAttribute('download')}`);
+
+                        // Optional: Show a success message after download completes
+                        setTimeout(() => {
+                            // You could show a toast notification here
+                            console.log('Download complete!');
+                        }, 3000);
+                    });
+                });
+
+                // Add hover effects for resource cards
+                const resourceCards = document.querySelectorAll('.resource-card');
+                resourceCards.forEach(card => {
+                    card.addEventListener('mouseenter', function () {
+                        gsap.to(this, {
+                            y: -10,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    });
+
+                    card.addEventListener('mouseleave', function () {
+                        gsap.to(this, {
+                            y: 0,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    });
+                });
+
+                // Declare variables to fix the "undeclared variable" errors.  These are likely intended to be global or imported.
+                let link;
+                let card;
+                let gsap;
+            });
+        </script>
+
+        <%- include('../partials/footer-content') %>
+
+            <%- include('../partials/footer', { jsFile: 'press' }) %>
