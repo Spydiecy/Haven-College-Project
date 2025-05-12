@@ -1,25 +1,14 @@
 const express = require('express');
-const fs = require('fs').promises;
+const jwt = require('jsonwebtoken');
 const router = express.Router();
+const User = require('../models/User');
 
-// Helper functions for user management
-async function getUsers() {
-  try {
-    const data = await fs.readFile('users.json', 'utf8');
-    return JSON.parse(data);
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      // If file doesn't exist, create an empty array
-      await fs.writeFile('users.json', '[]');
-      return [];
-    }
-    throw err;
-  }
-}
-
-async function saveUsers(users) {
-  await fs.writeFile('users.json', JSON.stringify(users, null, 2));
-}
+// Helper function to generate JWT token
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '30d' // Token expires in 30 days
+  });
+};
 
 // Login page route
 router.get('/login', (req, res) => {
@@ -40,14 +29,39 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Please provide email and password' });
     }
     
-    // Get users
-    const users = await getUsers();
+    // Find user by email
+    const user = await User.findOne({ email }).select('+password'); // +password to include password field
     
-    // Find user
-    const user = users.find(u => u.email === email && u.password === password);
+    // Check if user exists
+    if (!user) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
     
-    if (user) {
-      res.status(200).json({ success: true, redirect: '/dashboard' });
+    // Check if password matches
+    const isMatch = await user.comparePassword(password);
+    
+    if (isMatch) {
+      // Generate token
+      const token = generateToken(user._id);
+      
+      // Set cookie options
+      const cookieOptions = {
+        expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
+        httpOnly: true, // Can't be accessed by client-side JS
+        secure: process.env.NODE_ENV === 'production' // Only send on HTTPS in production
+      };
+      
+      // Set cookie with token
+      res.cookie('token', token, cookieOptions);
+      
+      // Remove password from response
+      user.password = undefined;
+      
+      res.status(200).json({ 
+        success: true, 
+        token,
+        redirect: '/dashboard' 
+      });
     } else {
       res.status(401).json({ success: false, message: 'Invalid credentials' });
     }
@@ -63,34 +77,40 @@ router.post('/register', async (req, res) => {
     console.log('Register attempt:', req.body);
     const { email, password } = req.body;
     
-    // Simple validation
+    // Enhanced validation
     if (!email || !password) {
       return res.status(400).json({ success: false, message: 'Please provide email and password' });
     }
     
-    // Get users
-    const users = await getUsers();
+    // Password validation
+    if (password.length < 8) {
+      return res.status(400).json({ success: false, message: 'Password must be at least 8 characters long' });
+    }
     
     // Check if email exists
-    if (users.some(user => user.email === email)) {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
       return res.status(400).json({ success: false, message: 'Email already exists' });
     }
     
-    // Add new user
-    users.push({
+    // Create new user
+    await User.create({
       email,
       password,
-      createdAt: new Date().toISOString()
+      username: email.split('@')[0] // Simple username from email
     });
-    
-    // Save users
-    await saveUsers(users);
     
     res.status(201).json({ success: true, message: 'Registration successful', redirect: '/auth/login' });
   } catch (error) {
     console.error('Registration error:', error);
     res.status(500).json({ success: false, message: 'Server error' });
   }
+});
+
+// Logout route
+router.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.redirect('/');
 });
 
 module.exports = router;

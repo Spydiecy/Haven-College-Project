@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const { protect } = require('../middlewares/authMiddleware');
 
-// Dashboard page
-router.get('/', (req, res) => {
+// Dashboard page - Protected route, requires authentication
+router.get('/', protect, async (req, res) => {
   // You can add any data you want to pass to the EJS template
   const departments = [
     {
@@ -38,10 +39,14 @@ router.get('/', (req, res) => {
     { number: '95%', label: 'Satisfaction Rate' }
   ];
 
+  // Get user info from request (added by auth middleware)
+  const user = req.user;
+
   res.render('dashboard', {
     title: 'Dashboard',
     departments: departments,
-    stats: stats
+    stats: stats,
+    user: user // Pass user info to the template
   });
 });
 

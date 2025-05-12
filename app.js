@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
+const cookieParser = require('cookie-parser');
 const errorMiddleware = require('./middlewares/errorMiddleware');
 
 // Import routes
@@ -56,6 +57,7 @@ app.use(limiter);
 // Built-in middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use routes

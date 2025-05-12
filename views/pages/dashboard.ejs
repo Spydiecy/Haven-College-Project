@@ -2,12 +2,33 @@
 
 <nav class="navbar">
     <a href="/" class="logo">HAVEN</a>
+    <div class="nav-links">
+        <a href="/destinations">Destinations</a>
+        <a href="/wellness">Wellness</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div class="user-info">
+        <% if(user) { %>
+            <span>Welcome, <%= user.username || user.email.split('@')[0] %></span>
+            <a href="/auth/logout" class="logout-btn">Logout</a>
+        <% } %>
+    </div>
 </nav>
 
 <div class="dashboard-container">
+    <div class="profile-header">
+        <div class="profile-banner"></div>
+        <div class="profile-avatar">
+            <span><%= (user.username || user.email.split('@')[0])[0].toUpperCase() %></span>
+        </div>
+        <h1>Welcome, <%= user.username || user.email.split('@')[0] %></h1>
+        <p>Member since <%= new Date(user.createdAt).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %></p>
+    </div>
+
     <section class="welcome-section">
-        <h1>Welcome to Haven Dashboard</h1>
-        <p>Explore our departments and services</p>
+        <h2>Your Haven Experience</h2>
+        <p>Explore our exclusive services and offers</p>
     </section>
 
     <section class="stats-container">

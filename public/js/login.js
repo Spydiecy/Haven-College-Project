@@ -55,6 +55,10 @@ form.addEventListener('submit', async function(e) {
         const data = await response.json();
         
         if (response.ok) {
+            // Store the token in localStorage if login was successful
+            if (isLoginMode && data.token) {
+                localStorage.setItem('token', data.token);
+            }
             // Redirect on success
             window.location.href = data.redirect;
         } else {
