@@ -300,7 +300,6 @@
 }
 
 /* Resources Section - fixed grid layout */
-/* Resources Section - Enhanced styling for better visual appeal and responsiveness */
 .resources-section {
     padding: 8rem 4rem;
     background-color: #2b3530;
@@ -311,8 +310,8 @@
 
 .resources-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -322,195 +321,61 @@
     border-radius: 10px;
     padding: 2.5rem 2rem;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.resource-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
 }
 
 .resource-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.resource-card:hover::before {
-    transform: translateY(0);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .resource-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.8rem;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
 }
 
-.resource-card:hover .resource-icon {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-}
-
-/* Enhanced resource icons */
-.resource-icon-image::before {
-    content: "\f03e";
-    /* Font Awesome image icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.resource-icon-doc::before {
-    content: "\f15b";
-    /* Font Awesome document icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.resource-icon-video::before {
-    content: "\f03d";
-    /* Font Awesome video icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.resource-icon-report::before {
-    content: "\f15c";
-    /* Font Awesome report icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+.resource-icon svg {
+    width: 48px;
+    height: 48px;
 }
 
 .resource-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
     font-weight: 300;
-    letter-spacing: 1px;
 }
 
 .resource-card p {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
     flex-grow: 1;
 }
 
 .resource-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 2rem;
+    display: inline-block;
+    padding: 0.7rem 2rem;
     border: 1px solid #fff;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 0.3s ease;
     margin-top: auto;
-    font-weight: 300;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-}
-
-.resource-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
 }
 
 .resource-link:hover {
     background-color: #fff;
     color: #2b3530;
-    transform: translateY(-3px);
-}
-
-.resource-link:hover::before {
-    left: 100%;
-}
-
-.resource-link i {
-    margin-right: 8px;
-}
-
-/* Download progress indicator */
-.download-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: width 0.3s ease;
-}
-
-/* Responsive adjustments for resources section */
-@media (max-width: 992px) {
-    .resources-container {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 2rem;
-    }
-
-    .resource-card {
-        padding: 2rem 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .resources-section {
-        padding: 6rem 2rem;
-    }
-
-    .resource-icon {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 1.5rem;
-    }
-
-    .resource-card h3 {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .resources-container {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-    }
-
-    .resources-section {
-        padding: 5rem 1.5rem;
-    }
 }
 
 /* Contact Section - fixed left space issue */

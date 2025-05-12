@@ -146,53 +146,71 @@
         </section>
 
         <!-- Media Resources Section -->
-        <!-- Media Resources Section -->
         <section class="resources-section">
             <h2 class="section-title">Media Resources</h2>
             <div class="resources-container">
+
+                <!-- Brand Assets -->
                 <div class="resource-card">
-                    <div class="resource-icon resource-icon-image"></div>
+                    <div class="resource-icon">
+                        <!-- Suitcase Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <path fill="#FF9800" d="M16 16h32v32H16z" />
+                            <path fill="#FFF" d="M24 24h16v16H24z" />
+                        </svg>
+                    </div>
                     <h3>Brand Assets</h3>
                     <p>Download our logo, brand guidelines, and official imagery for media use.</p>
-                    <a href="/downloads/haven-brand-assets.zip" class="resource-link"
-                        download="Haven-Hotels-Brand-Assets.zip" data-resource="brand-assets">
-                        <i class="fas fa-download"></i>Download
-                    </a>
-                    <div class="download-progress" id="progress-brand-assets"></div>
+                    <a href="/press/brand-assets" class="resource-link">Download</a>
                 </div>
 
+                <!-- Fact Sheets -->
                 <div class="resource-card">
-                    <div class="resource-icon resource-icon-doc"></div>
+                    <div class="resource-icon">
+                        <!-- Fact Sheet Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <rect x="12" y="8" width="40" height="48" fill="#4CAF50" />
+                            <line x1="20" y1="20" x2="44" y2="20" stroke="#FFF" stroke-width="2" />
+                            <line x1="20" y1="28" x2="44" y2="28" stroke="#FFF" stroke-width="2" />
+                            <line x1="20" y1="36" x2="44" y2="36" stroke="#FFF" stroke-width="2" />
+                        </svg>
+                    </div>
                     <h3>Fact Sheets</h3>
                     <p>Access key information about our company, products, and sustainability initiatives.</p>
-                    <a href="/downloads/haven-fact-sheets.pdf" class="resource-link"
-                        download="Haven-Hotels-Fact-Sheets.pdf" data-resource="fact-sheets">
-                        <i class="fas fa-download"></i>Download
-                    </a>
-                    <div class="download-progress" id="progress-fact-sheets"></div>
+                    <a href="/press/fact-sheets" class="resource-link">Download</a>
                 </div>
 
+                <!-- Video Gallery -->
                 <div class="resource-card">
-                    <div class="resource-icon resource-icon-video"></div>
+                    <div class="resource-icon">
+                        <!-- Video Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="30" fill="#F44336" />
+                            <polygon points="26,20 46,32 26,44" fill="#FFF" />
+                        </svg>
+                    </div>
                     <h3>Video Gallery</h3>
                     <p>Browse our collection of corporate videos, product demonstrations, and interviews.</p>
-                    <a href="/downloads/haven-video-collection.zip" class="resource-link"
-                        download="Haven-Hotels-Videos.zip" data-resource="video-gallery">
-                        <i class="fas fa-download"></i>Download
-                    </a>
-                    <div class="download-progress" id="progress-video-gallery"></div>
+                    <a href="/press/video-gallery" class="resource-link">View Gallery</a>
                 </div>
 
+                <!-- Annual Reports -->
                 <div class="resource-card">
-                    <div class="resource-icon resource-icon-report"></div>
+                    <div class="resource-icon">
+                        <!-- Report Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <rect x="12" y="8" width="40" height="48" fill="#2196F3" />
+                            <line x1="20" y1="20" x2="44" y2="20" stroke="#FFF" stroke-width="2" />
+                            <line x1="20" y1="28" x2="44" y2="28" stroke="#FFF" stroke-width="2" />
+                            <line x1="20" y1="36" x2="44" y2="36" stroke="#FFF" stroke-width="2" />
+                            <line x1="20" y1="44" x2="44" y2="44" stroke="#FFF" stroke-width="2" />
+                        </svg>
+                    </div>
                     <h3>Annual Reports</h3>
                     <p>Review our annual reports and financial statements from recent years.</p>
-                    <a href="/downloads/haven-annual-report-2023.pdf" class="resource-link"
-                        download="Haven-Hotels-Annual-Report-2023.pdf" data-resource="annual-reports">
-                        <i class="fas fa-download"></i>Download
-                    </a>
-                    <div class="download-progress" id="progress-annual-reports"></div>
+                    <a href="/press/annual-reports" class="resource-link">View Reports</a>
                 </div>
+
             </div>
         </section>
 
@@ -221,9 +239,9 @@
 
                     <div class="subscribe-form">
                         <h3>Subscribe to Press Updates</h3>
-                        <form action="/subscribe" method="POST">
+                        <form action="#" method="POST">
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Your email address" required>
+                                <input type="email" name="email" placeholder="Your email address" id="email" required>
                                 <button type="submit" class="subscribe-btn">Subscribe</button>
                             </div>
                             <label class="checkbox-container">
@@ -326,73 +344,13 @@
                     });
                 });
             });
-        </script>
 
-        <script>
-            // Download functionality for media resources
-            document.addEventListener('DOMContentLoaded', function () {
-                // Get all download links
-                const downloadLinks = document.querySelectorAll('.resource-link[download]');
-
-                // Add click event listener to each download link
-                downloadLinks.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        // Get the resource type from data attribute
-                        const resourceType = this.getAttribute('data-resource');
-                        const progressBar = document.getElementById(`progress-${resourceType}`);
-
-                        // Simulate download progress
-                        let progress = 0;
-                        const interval = setInterval(() => {
-                            progress += Math.random() * 10;
-                            if (progress >= 100) {
-                                progress = 100;
-                                clearInterval(interval);
-
-                                // Reset progress bar after download completes
-                                setTimeout(() => {
-                                    progressBar.style.width = '0%';
-                                }, 1000);
-                            }
-                            progressBar.style.width = `${progress}%`;
-                        }, 200);
-
-                        // Log download for analytics (you can expand this)
-                        console.log(`Downloaded: ${this.getAttribute('download')}`);
-
-                        // Optional: Show a success message after download completes
-                        setTimeout(() => {
-                            // You could show a toast notification here
-                            console.log('Download complete!');
-                        }, 3000);
-                    });
-                });
-
-                // Add hover effects for resource cards
-                const resourceCards = document.querySelectorAll('.resource-card');
-                resourceCards.forEach(card => {
-                    card.addEventListener('mouseenter', function () {
-                        gsap.to(this, {
-                            y: -10,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    });
-
-                    card.addEventListener('mouseleave', function () {
-                        gsap.to(this, {
-                            y: 0,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                    });
-                });
-
-                // Declare variables to fix the "undeclared variable" errors.  These are likely intended to be global or imported.
-                let link;
-                let card;
-                let gsap;
+            const subscribeBtn = document.getElementsByClassName('subscribe-btn');
+            subscribeBtn.addEventListener('click', () => {
+                const emailInput = document.querySelector('email');
+                emailInput.value = '';
             });
+
         </script>
 
         <%- include('../partials/footer-content') %>
